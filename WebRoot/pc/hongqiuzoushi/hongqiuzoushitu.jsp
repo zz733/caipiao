@@ -53,7 +53,69 @@
 .table_hq tbody {
 	background-color: #F7F0F0;
 }
-  
+  .table_hq td{
+  width:0px;
+  }
+  .active{
+  background-color:rgb(174, 0, 0) !important;
+  color:#FFF !important;
+  }
+    .active2{
+  background-color:rgb(174, 0, 0) !important;
+  color:#FFF !important;
+  }
+    .active3{
+  background-color:rgb(174, 0, 0) !important;
+  color:#FFF !important;
+  }
+  #vipxh {
+    background-color: #CFDFF3;
+    border: 1px solid lightgray;
+}
+.jinyong {
+    width: 80%;
+    position: absolute;
+    z-index: 100;
+    background: #CDC9C9;
+    filter: alpha(Opacity=70);
+    -moz-opacity: 0.2;
+    opacity: 0.5;
+}
+.vipxh_tx p {
+    font-weight: 600;
+    font-size: 26px;
+    margin-left: 30px;
+    margin-top: 7px;
+    color: red;
+}
+.Select {
+    margin-left:230px;
+    margin-top: -45px;
+    background: #428BCB;
+    padding: 4px 0px 8px;
+    width: 200px;
+    border-radius: 5px;
+}
+.left_right {
+    padding-left: 100px;
+}
+select {   
+      /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/  
+      border: solid 1px #000;   
+      /*很关键：将默认的select选择框样式清除*/  
+      appearance:none;   
+      -moz-appearance:none;   
+      -webkit-appearance:none;   
+      /*在选择框的最右侧中间显示小箭头图片*/  
+      background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll rightright center transparent;   
+      /*为下拉小箭头留出一点位置，避免被文字覆盖*/  
+      padding-right: 14px;   
+    }   
+    /*清除ie的默认选择框样式清除，隐藏下拉箭头*/  
+    select::-ms-expand { display: none;
+ }  
+
+
 </style>
 
 </head>
@@ -67,9 +129,9 @@
 					<th rowspan="2" id="yincang" style="font-weight: 900;width:100px;"><div
 							id="qq">期号</div></th>
 					<th colspan="33">红球走势</th>
-					<th rowspan="2">一区</th>
-					<th rowspan="2">二区</th>
-					<th rowspan="2">三区</th>
+					<th rowspan="2" style="width: 55px;">一区</th>
+					<th rowspan="2" style="width: 55px;">二区</th>
+					<th rowspan="2" style="width: 55px;">三区</th>
 				</tr>
 				<tr>
 					<th class="num" width="24px">1</th>
@@ -115,84 +177,50 @@
                 	描述：选号区
                		 -->
 		<div style="width: 80%;margin: 0 auto;">
-		
-			<div class="wrap" style="padding-top: 10px;">
-
-				<div class="moni_xh" style="width:99px;">模拟选号</div>
-
-				<ul id="ul" style="height: 25px;">
-
-				</ul>
-			</div>
-			<!-- 模拟选号两行 -->
-			<div class="konghang" style="padding-top: 10px;margin-top: -11px;">
-
-				<div class="moni_xh" style="margin-top:-9px;width:99px;"></div>
-
-				<ul class="ul1" style="height: 25px;">
-
-				</ul>
-			</div>
-			 <div class="konghang" style="padding-top: 10px;margin-top: -20px;">
-
-				<div class="moni_xh" style="margin-top:-9px;width:99px;"></div>
-
-				<ul class="ul1" style="height: 25px;">
-
-				</ul>
-			</div>
-			
-			<div class="button_yi"  style="margin-top: -60px;margin-right: -80px;">
-				<div class="btn btn-group">
-					<button type="button" class="left btn btn-success btn-sm">◀</button>
+			<!--模拟选号-->
+		 <div class="btn btn-group btn_zh" style="margin-top: -50px;float: right;">
+			        <button type="button" class="left btn btn-success btn-sm">◀</button>
 					<button type="button" class="right btn btn-success btn-sm">▶</button>
 					<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
-
-				</div>
-			</div>
-
-			<!--vip选号 -->
-			<div class="container-fluid">
-				<div id="vipxh" class="row"
-					style="margin-bottom: 10px;">
-					<div class="vipxh_tx col-md-3">
-						<p>VIP选号区</p>
-						<!--</div>-->
-					</div>
-					<div class="wrapper col-md-3" id="xiaLa">
-						<select ${sessionScope.userinfo.usersType==1?'':'disabled'}  class="dropdown" id="sel" data-settings='{"wrapperClass":"flat"}' onchange="vip_ds()" >
-							<option value="0" selected="selected">固定二档</option>
-							<option value="1">固定三档</option>
-							<option value="2">一区二档</option>
-							<option value="3">一区三档</option>
-							<option value="4">二区二档</option>
-							<option value="5">二区三档</option>
-							<option value="6">三区二档</option>
-							<option value="7">三区三档</option>
+	     </div>
+	     <!--vip选号-->
+		<div class="container-fluid">
+			<div id="vipxh" style="margin-top: 80px;margin-bottom: 10px;height: 50px;">
+				<div class="vipxh_tx" >
+					<p>VIP选号区</p>
+			    </div>
+				 <div class="Select">
+						<select  class="Selectbig" onchange="change()" id="group" style="color: black;width: auto;padding: 0 10%;margin:0;padding:0 10%;margin: 0;width: 175px;border: none;  background: #428BCB;">
+							<option value="0" selected="selected" color: black;">固定二档</option>
+							<option value="1" style="color: black;">固定三档</option>
+							<option value="2" style="color: black;">一区二档</option>
+							<option value="2" style="color: black;">一区三档</option>
+							<option value="2" style="color: black;">二区二档</option>
+							<option value="2" style="color: black;">二区三档</option>
+							<option value="2" style="color: black;">三区二档</option>
+							<option value="2" style="color: black;">三区三档</option>
 						</select>
+						<span class="xx">▼</span>
 					</div>
-					<div class="left_right col-md-3"
-						style="padding-left: 80px;padding-top: 10px;" >
-						<button id="btnLeft" type="button" class="left_index l_f btn btn-primary btn-sm" ${sessionScope.userinfo.usersType==1?'':'disabled'}> ◀</button>
-						<ul class="ul_xh">
-							<!--<li class="num">01</li>
-											<li class="num">02</li>-->
+						<div class="left_right" style="margin:-30px 0px 0px 416px;">
+						<button id="btnLeft" class="left_index l_f btn btn-primary btn-sm" ${sessionScope.userinfo.usersType==1?'':''}>◀</button>
+						<ul class="btnul" id="btnul">
 						</ul>
-						<button  id="btnRight" type="button"  class="right_index l_f btn btn-primary btn-sm"
-							style="margin-top: -12px;" ${sessionScope.userinfo.usersType==1?'':'disabled'}>▶</button>
-
-					</div>
-					<div class="col-md-3" style="padding-top: 5px;">
-						<div  class="btn-group btn_group" role="group"
-							style="display: block;margin-top: 5px;" >
-							<!--<button type="button" class="btn btn-primary btn-sm">01</button>-->
+						<!-- <span style="position:relative;top:9px;">跨度：</span> ${sessionScope.userinfo.usersType==1?'':''}-->
+						<!-- <button  id="btnRight" type="button"  class="right_index btn-primary btn-sm" >▶</button> -->	
+						
 						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div style="height: 150px;">
-		    </div>
+						<ul class="btnul2" id="btnul2" style="margin-top: -45px;float:right;">
+						</ul>
+						<div style="margin-left:80%;margin-top:-40px;width:180px;">
+								<div class="btn-group btn_group" role="group" style="display: block;margin-top: 5px;">
+									    <!--<button type="button" class="btn btn-primary btn-sm">01</button>-->
+								</div>
+						</div>
+			</div>	
+						</div>
+			<div style="width:100%;height:230px;"></div>
+	     
 		</div>
 	</div>
 </body>
@@ -257,7 +285,7 @@ $(function(){
         
     });
 
-});
+}); 
 function vipchongzhi(title,url,w,h){
 	layer_show(title,url,w,h);
 }

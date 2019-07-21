@@ -322,7 +322,12 @@ $(document).ready(function() {
 		var index = mnxh.indexOf(text); // 选中的文本的下标
 		if (index <= 4) {
 			var rightIndex = index + 10;
+//			console.log(rightIndex)
 			$ul.children("li").eq(rightIndex).toggleClass("active");
+//			if(index<=0){
+//				console.log("输出："+rightIndex)
+//				$ul.children("li").eq(rightIndex).toggleClass("active");
+//			}
 		}
 
 		if (index >= 10) {
@@ -334,6 +339,7 @@ $(document).ready(function() {
 			chooseIndexs.splice(chooseIndexs.indexOf(index), 1);
 		} else {
 			chooseIndexs.push(index);
+//			console.log("有这个字节："+chooseIndexs)
 		}
 
 		var cstr = $ul.children(".active").text();
@@ -343,7 +349,7 @@ $(document).ready(function() {
 			$(".myselt").val(cstr);;
 		}
 	}
-
+console.log()
 	function render() {
 		var str = "";
 		console.log(chooseIndexs);
@@ -356,7 +362,7 @@ $(document).ready(function() {
 		for (var i = 0; i < mnxh2.length; i++) {
 			var idValue = "mnxhqh_" + mnxh2[i];
 			var active = chooseIndexs.indexOf(i) > -1;
-			str = str + "<li class='" + idValue + " "
+			str = str + "<li class='" + idValue + " one "
 					+ (active ? "active" : "") + "'" + " style='color:#EAEEEE;'>" + mnxh2[i] + "</li>";
 		}
 
@@ -383,7 +389,6 @@ $(document).ready(function() {
 					}
 				}
 			}
-			// console.log(mnxh);
 			render();
 		}
 	}
@@ -394,10 +399,12 @@ $(document).ready(function() {
 		table_td = table_td
 				+ "<li style = 'background:#EAEEEE;margin-left:1px'></li>";
 	}
-//	for (var b = 0; b < 25; b++) {
-//		table_td2 = table_td2
-//				+ "<li style = 'background:#EAEEEE;margin-left:1px'></li>";
-//	}
+	var table_td2 = "";
+	for (var j = 0; j < 4; j++) {
+		table_td2 = table_td2
+				+ "<li style = 'background:#EAEEEE;margin-left:1px'></li>";
+	}
+//	$(".ul li:eq(14)").html(table_td2);
 	$(".ul1").html(table_td);
 //	$(".ul1").html(table_td2);
 
@@ -409,7 +416,6 @@ $(document).ready(function() {
 
 	$(".qingkong").click(function() {
 				chooseIndexs.length = 0;
-
 				console.log(chooseIndexs);
 				$(".active").removeClass("active");
 
@@ -534,14 +540,14 @@ var arry4 = go6(5);
 var index = 0;
 $(function(){
 	if(index==0){
-		  $("#btnLeft").attr("disabled","disabled");
+		  $("#btnLeft").addClass("disabled");
 	  }else{
-		  $("#btnLeft").removeAttr("disabled");
+		  $("#btnLeft").removeClass("disabled");
 	  }
 	 if(index>=arry2.length-1){
-		   $("#btnRight").attr("disabled","disabled");
+		   $("#btnRight").addClass("disabled");
 	   }else{
-		   $("#btnRight").removeAttr("disabled");
+		   $("#btnRight").removeClass("disabled");
 	   }
 	$("#btnRight").click(function(){
 		index++;
@@ -552,9 +558,9 @@ $(function(){
 		   showVIP(arry2[index],4);
 		   $("#btnLeft").removeAttr("disabled");
 		   if(index  >= (arry2.length-1)){ 
-			   $("#btnRight").attr("disabled","disabled");
+			   $("#btnRight").addClass("disabled");
 		   }else{
-			   $("#btnRight").removeAttr("disabled");
+			   $("#btnRight").removeClass("disabled");
 		   }
       });
 	$("#btnLeft").click(function(){
@@ -564,11 +570,11 @@ $(function(){
 		   $(".btnul li:eq(2)").text(arry2[index][2]);
 		   $(".btnul li:eq(3)").text(arry2[index][3]);
 		   showVIP(arry2[index],4);
-		   $("#btnRight").removeAttr("disabled");
+		   $("#btnRight").removeClass("disabled");
 		  if(index==0){
-			  $("#btnLeft").attr("disabled","disabled");
+			  $("#btnLeft").addClass("disabled");
 		  }else{
-			  $("#btnLeft").removeAttr("disabled");
+			  $("#btnLeft").removeClass("disabled");
 		  }
    });
 })
@@ -588,6 +594,7 @@ $(function(){
 			for(var i=0;i<three.length;i++){
 			(function(m){ 
 			       $(".three").eq(m).click(function(){
+			    	   $("#btnRight").removeAttr("disabled");
 			    	   index = 0;
 			    	   arry2 =go4(m+5);
 			    			$(".btnul li:eq(0)").text(arry2[index][0]);
@@ -595,15 +602,15 @@ $(function(){
 			    			$(".btnul li:eq(2)").text(arry2[index][2]);
 			    			$(".btnul li:eq(3)").text(arry2[index][3]);
 			    			showVIP(arry2[index],4);
-			    	   if($(".btnul li:eq(0)").text()==0){
-			    		   $("#btnLeft").attr("disabled","disabled");
+			    	   if(index==0){
+			    		   $("#btnLeft").addClass("disabled");
 			    	   }else{
-			    		   $("#btnLeft").removeAttr("disabled");
+			    		   $("#btnLeft").removeClass("disabled");
 			    		}
 			    	   if(index>= (arry2.length-1)){
-		   				   $("#btnRight").attr("disabled","disabled");
+		   				   $("#btnRight").addClass("disabled");
 		   			   }else{
-		   				$("#btnRight").removeAttr("disabled");
+		   				$("#btnRight").removeClass("disabled");
 		   			   }
 			      }); 
 			   })(i);
@@ -616,7 +623,7 @@ $(function(){
 			   $(".btnul li:eq(2)").text(arry2[index][2]);
 			   $(".btnul li:eq(3)").text(arry2[index][3]);
 			   showVIP(arry2[index],4);
-			   $("#btnLeft").removeAttr("disabled");
+			   $("#btnLeft").removeClass("disabled");
 			   if(index>=arry2.length-1){
 				   $("#btnRight").attr("disabled","disabled");
 			   }else{
@@ -630,17 +637,22 @@ $(function(){
 			   $(".btnul li:eq(2)").text(arry2[index][2]);
 			   $(".btnul li:eq(3)").text(arry2[index][3]);
 			   showVIP(arry2[index],4);
-			   $("#btnRight").removeAttr("disabled");
-			  if(index==0){
-				  $("#btnLeft").attr("disabled","disabled");
+			   $("#btnRight").removeClass("disabled");
+			  if(index<=0){
+				  $("#btnLeft").addClass("disabled");
 			  }else{
-				  $("#btnLeft").removeAttr("disabled");
+				  $("#btnLeft").removeClass("disabled");
 			  }
 	      });
 	}
 })
-$('.Selectbig').change(function(){
+function change(){
 	if($('.Selectbig option:selected').text()=="选四"){
+		if(index==0){
+			  $("#btnLeft").addClass("disabled");
+		  }else{
+			  $("#btnLeft").removeClass("disabled");
+		  }
 		$(".btnul li:eq(4)").hide();
 		$(".btnul li:eq(5)").hide();
 		arry2 = go4(5);
@@ -657,6 +669,7 @@ $('.Selectbig').change(function(){
 			for(var i=0;i<three.length;i++){
 			(function(m){ 
 			       $(".three").eq(m).click(function(){
+			    	   $("#btnRight").removeAttr("disabled");
 			    	   index = 0;
 			    	   arry2 =go4(m+5);
 			    			$(".btnul li:eq(0)").text(arry2[index][0]);
@@ -665,15 +678,20 @@ $('.Selectbig').change(function(){
 			    			$(".btnul li:eq(3)").text(arry2[index][3]);
 			    			showVIP(arry2[index],4);
 			    	   if($(".btnul li:eq(0)").text()==0){
-			    		   $("#btnLeft").attr("disabled","disabled");
+			    		   $("#btnLeft").addClass("disabled");
 			    	   }else{
-			    		   $("#btnLeft").removeAttr("disabled");
+			    		   $("#btnLeft").removeClass("disabled");
 			    		}
 			    	   if(index>=arry2.length-1){
-		   				   $("#btnRight").attr("disabled","disabled");
+		   				   $("#btnRight").addClass("disabled");
 		   			   }else{
-		   				$("#btnRight").removeAttr("disabled");
+		   				$("#btnRight").removeClass("disabled");
 		   			   }
+			    	   if(index==0){
+			 			  $("#btnLeft").addClass("disabled");
+			 		  }else{
+			 			  $("#btnLeft").removeClass("disabled");
+			 		  }
 			      }); 
 			   })(i);
 			}
@@ -686,7 +704,7 @@ $('.Selectbig').change(function(){
 			   $(".btnul li:eq(2)").text(arry2[index][2]);
 			   $(".btnul li:eq(3)").text(arry2[index][3]);
 			   showVIP(arry2[index],4);
-			   $("#btnLeft").removeAttr("disabled");
+			   $("#btnLeft").removeClass("disabled");
 			   if(index>=(arry2.length-1)){
 				   $("#btnRight").attr("disabled","disabled");
 			   }else{
@@ -701,12 +719,12 @@ $('.Selectbig').change(function(){
 			   $(".btnul li:eq(2)").text(arry2[index][2]);
 			   $(".btnul li:eq(3)").text(arry2[index][3]);
 			   showVIP(arry2[index],4);
-			   $("#btnRight").removeAttr("disabled");
-			  if(index==0){
-				  $("#btnLeft").attr("disabled","disabled");
-			  }else{
-				  $("#btnLeft").removeAttr("disabled");
-			  }
+			   $("#btnRight").removeClass("disabled");
+			   if(index==0){
+					  $("#btnLeft").addClass("disabled");
+				  }else{
+					  $("#btnLeft").removeClass("disabled");
+				  }
 	      });
 	}
 	if($('.Selectbig option:selected').text()=="选五"){
@@ -728,6 +746,7 @@ $('.Selectbig').change(function(){
 				(function(m){         
 					 $(".three").eq(m).unbind("click");
 				       $(".three").eq(m).click(function(){
+				    	   $("#btnRight").removeAttr("disabled");
 				    	   index = 0
 				    	   arry3 = go5(m+5);
 				    			$(".btnul li:eq(0)").text(arry3[index][0]);
@@ -736,15 +755,15 @@ $('.Selectbig').change(function(){
 				    			$(".btnul li:eq(3)").text(arry3[index][3]);
 				    			$(".btnul li:eq(4)").text(arry3[index][4]);
 				    			showVIP(arry3[index],5);
-				    	   if($(".btnul li:eq(0)").text()==0){
-				    		   $("#btnLeft").attr("disabled","disabled");
+				    		if(index==0){
+				    		   $("#btnLeft").addClass("disabled");
 				    	   }else{
-				    		   $("#btnLeft").removeAttr("disabled");
+				    		   $("#btnLeft").removeClass("disabled");
 				    	   }
 				    	   if(index>arry3.length-1){
-				    		   $("#btnRight").attr("disabled","disabled");
+				    		   $("#btnRight").addClass("disabled");
 				    	   }else{
-				    		   $("#btnRight").removeAttr("disabled");
+				    		   $("#btnRight").removeClass("disabled");
 				    	   }
 				      }); 
 				   })(i);
@@ -759,7 +778,7 @@ $('.Selectbig').change(function(){
 				   $(".btnul li:eq(3)").text(arry3[index][3]);
 				   $(".btnul li:eq(4)").text(arry3[index][4]);
 				   showVIP(arry3[index],5);
-				   $("#btnLeft").removeAttr("disabled");
+				   $("#btnLeft").removeClass("disabled");
 				   if(index>=(arry3.length-1)){
 					   $("#btnRight").attr("disabled","disabled");
 				   }else{
@@ -775,16 +794,17 @@ $('.Selectbig').change(function(){
 				   $(".btnul li:eq(3)").text(arry3[index][3]);
 				   $(".btnul li:eq(4)").text(arry3[index][4]);
 				   showVIP(arry3[index],5);
-				   $("#btnRight").removeAttr("disabled");
+				   $("#btnRight").removeClass("disabled");
 				  if(index<=0){
-					  $("#btnLeft").attr("disabled","disabled");
+					  $("#btnLeft").addClass("disabled");
 				  }else{
-					  $("#btnLeft").removeAttr("disabled");
+					  $("#btnLeft").removeClass("disabled");
 				  }
 		      });
 	}
 	if($('.Selectbig option:selected').text()=="选六"){
-		 $("#btnLeft").attr("disabled","disabled");
+		 $("#btnLeft").addClass("disabled");
+		 $("#btnRight").removeAttr("disabled");
 		$(".btnul li:eq(4)").show();
 		$(".btnul li:eq(5)").show();
 		arry4 = go6(5);
@@ -803,6 +823,7 @@ $('.Selectbig').change(function(){
 			for(var i=0;i<three.length;i++){
 			(function(m){ 
 			       $(".three").eq(m).click(function(){
+			    	   $("#btnRight").removeAttr("disabled");
 			    	   index = 0;
 			    	   arry4 =go6(m+5);
 			    			$(".btnul li:eq(0)").text(arry4[index][0]);
@@ -812,15 +833,15 @@ $('.Selectbig').change(function(){
 			    			$(".btnul li:eq(4)").text(arry4[index][4]);
 			    			$(".btnul li:eq(5)").text(arry4[index][5]);
 			    			showVIP(arry4[index],6);
-			    	   if($(".btnul li:eq(0)").text()==0){
-			    		   $("#btnLeft").attr("disabled","disabled");
+			    	   if(index<=0){
+			    		   $("#btnLeft").addClass("disabled");
 			    	   }else{
-			    		   $("#btnLeft").removeAttr("disabled");
+			    		   $("#btnLeft").removeClass("disabled");
 			    		}
 			    	   if(index>=arry4.length-1){
-		   				   $("#btnRight").attr("disabled","disabled");
+		   				   $("#btnRight").addClass("disabled");
 		   			   }else{
-		   				$("#btnRight").removeAttr("disabled");
+		   				$("#btnRight").removeClass("disabled");
 		   			   }
 			      }); 
 			   })(i);
@@ -836,7 +857,9 @@ $('.Selectbig').change(function(){
 			   $(".btnul li:eq(4)").text(arry4[index][4]);
 			   $(".btnul li:eq(5)").text(arry4[index][5]);
 			   showVIP(arry4[index],6);
-			   $("#btnLeft").removeAttr("disabled");
+			   $("#btnLeft").removeClass("disabled");
+			   console.log(index)
+			   console.log(arry4.length-1)
 			   if(index>=(arry4.length-1)){
 				   $("#btnRight").attr("disabled","disabled");
 			   }else{
@@ -853,56 +876,35 @@ $('.Selectbig').change(function(){
 			   $(".btnul li:eq(4)").text(arry4[index][4]);
 			   $(".btnul li:eq(5)").text(arry4[index][5]);
 			   showVIP(arry4[index],6);
-			   $("#btnRight").removeAttr("disabled");
+			   $("#btnRight").removeClass("disabled");
 			  if(index==0){
-				  $("#btnLeft").attr("disabled","disabled");
+				  $("#btnLeft").addClass("disabled");
 			  }else{
-				  $("#btnLeft").removeAttr("disabled");
+				  $("#btnLeft").removeClass("disabled");
 			  }
 	      });
 	}
-})
+}
+//$(".one").click(function(){
+//	$("#ul li:eq(9)").css("color","red");
+//})
 window.setTimeout(function(){
 	$("#ul>li").removeClass("active");
 	
 },200);
-//window.onload=function (){ 
-//	$("#ul li:eq(0)").addClass("active");
-//	$("#ul li:eq(1)").addClass("active");
-//	$("#ul li:eq(2)").addClass("active");
-//	$("#ul li:eq(5)").addClass("active");
-//}
 //VIP号 显示在模拟区
 function showVIP(param,n)
 {         
 	var array=[0,1,2,3,4];
 	console.log(param);//按钮格子当中的值
 	$("#ul li").removeClass("active");//原来选中的红色格子
-	for(var i=0;i<6;i++){//param[i]该值为0-9,即说明可以从0移动到9位
-		$("#ul li:eq("+param[i]+")").addClass("active");
-		for(var j=0;j<array.length;j++){
-			if(array[j]==param[i]){
-				$("#ul li:eq("+"1"+param[i]+")").addClass("active");
-			}
+	for (var i=0;i<param.length;i++)
+	{
+		$("#ul li").eq(param[i]).addClass("active");
+		if (param[i]<=4)
+		{
+			console.log("输出"+param[i])
+			$("#ul .one").eq(param[i]).addClass("active");
 		}
 	}
-	
-//	for (var i=0;i<n;i++)
-//	{
-//		$("#ul>li").each(function(j,li){
-//			//alert(j)
-//			if (param[i]==j-1)
-//			{
-//				//alert(j);
-//				$(li).addClass("active");
-//		        if (j-1<5)
-//		        {
-//		            $("#ul>li").eq(j-1).addClass("active");
-//		        }
-//			}
-//			
-//		});
-//	   	
-//	}
-	
 }

@@ -26,7 +26,7 @@
 		.btnRight{
 		float:right;}
 		.Select{
-	margin-left: 310px;
+	margin-left:260px;
 	margin-top: -47px;
 	    background: #428BCB;
     padding: 4px 0px 8px;
@@ -163,7 +163,7 @@ width:868px;
 		
 		<!--vip选号-->
 		<div class="container-fluid">
-			<div id="vipxh" style="margin-top: 10px;margin-bottom: 10px;height: 50px;">
+			<div id="vipxh" style="margin-top: 70px;margin-bottom: 10px;height: 50px;">
 				<div class="vipxh_tx" >
 					<p>VIP选号区</p>
 			    </div>
@@ -176,7 +176,7 @@ width:868px;
 					</select>
 				 </div> -->
 				 <div class="Select">
-						<select  class="Selectbig" id="group" style="text-align:center;color: black;width: auto;padding: 0 10%;margin:0;padding:0 10%;margin: 0;width: 175px;border: none;  background: #428BCB;">
+						<select  class="Selectbig" onchange="change()" id="group" style="text-align:center;color: black;width: auto;padding: 0 10%;margin:0;padding:0 10%;margin: 0;width: 175px;border: none;  background: #428BCB;">
 							<option value="0" selected="selected" style="text-align: center;color: black;">选四</option>
 							<option value="1" style="text-align: center;color: black;">选五</option>
 							<option value="2" style="text-align: center;color: black;">选六</option>
@@ -200,6 +200,7 @@ width:868px;
 						</div>
 			</div>	
 						</div>
+						<div style="width:100%;height:250px;"></div>
 	</div>
 	</body>
 	
