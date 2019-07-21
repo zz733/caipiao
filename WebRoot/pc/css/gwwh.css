@@ -1,0 +1,192 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+#main{
+	margin: 0 auto;
+}
+
+#title{
+	width: 80%;
+	margin: auto;
+	color: #B92734;
+}
+#head{
+	margin: auto;
+	width: 80%;
+	text-align: center;
+	height: 34px;
+	background-color: #f6f6f6;
+}
+
+.table_gw{
+	 
+	margin: auto;
+	font-weight: 100px;
+	border: 1px solid #fff;
+}
+.table_gw thead{
+	background-color: #CFDFF3;
+}
+.table_gw th{
+	    font-weight: 300;
+		border: 1px solid #fff;
+    	text-align: center;    /*设置水平居中*/
+    	vertical-align: middle;    /*设置垂直居中*/
+}
+.table_gw td{
+    		border: 1px solid #fff;
+    		text-align: center;
+    	}
+.table_gw .num {
+	width: 16px !important;
+}
+#updown{width: 15px;height: 15px;margin-left: 5px;}
+#yincang {
+	/* width:100px; */
+}
+
+
+
+
+/*---------模拟选号------------*/
+    	
+    	.mn_xuange{
+    	    margin:0 auto;
+    	    width: 1082px;
+		    margin-top: -10px;
+		  
+    	}
+    	.wrap ul li {
+    		float: left;
+    		width: 15px;
+    		height: 20px;
+    		float: left;
+    		padding-top:2px;
+    		margin-right: 1px;
+    		text-align: center;
+    		vertical-align: middle;    /*设置垂直居中*/
+    		cursor: pointer;
+    		font-size: 12px;
+    		background: #F3F3F3;
+    	}
+    	
+    	.konghang ul li {
+    		float: left;
+    		width: 15px;
+    		height: 20px;
+    	/*	margin-left: 5px;*/
+    		/*margin-bottom: 2.5px;*/
+    		float: left;
+    		text-align: center;
+    		font-size: 12px;
+    		background: #EAEEEE;
+    		/* line-height: 24px;  */
+    		margin-right: 1px;
+    	}
+    	
+    	.wrap ul li:last-child {
+    		margin-right: 0;
+    	}
+    	
+    	.wrap li.active {
+    	    /*
+    		background: red !important; */
+    		color: white !important;
+    		
+    	}
+    	#mnxh {
+    		height: 30px;
+    	}
+    	
+    	.monixh {
+    		text-align: center;
+    		background-color: #CFDFF3;
+    		font-weight: 600;
+    		line-height: 25px;
+    		float: left;
+    		width: 112px;
+    		font-size: 14px;
+    	}
+    	
+    	.moni_xh {
+    		text-align: center;
+    		background-color:#EAEEEE;
+    		font-weight: 400;
+    		float: left;
+    		margin-right: 1px;
+    		width: 119px;
+    		font-size: 14px;
+    		margin-left: 1px;
+    	}
+    	
+    	.table_td1 {
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    		white-space: nowrap;
+    		padding: 2px
+    	}
+    	
+    	#xh {
+    		width: 100%;
+    		border: 1px solid #FFFFFF;
+    		list-style: none;
+    		font-weight: 600;
+    		line-height: 35px;
+    		margin: 0px auto;
+    		margin-top: 55px;
+    		text-align: center;
+    	}
+    	
+    	#ul button {
+    		text-align: center;
+    		padding: 0;
+    		width: 25px;
+    		height: 25px;
+    		min-height: 20px;
+    		min-width: 20px;
+    		background: #F3F3F3;
+    		text-align: center;
+    		margin-right: 3px;
+    		margin-top: 3px;
+    		border: 1px solid lightgrey;
+    	}
+    	
+    	.table_td button {
+    		text-align: center;
+    		padding: 0;
+    		width: 25px;
+    		height: 25px;
+    		min-height: 20px;
+    		min-width: 20px;
+    		background: #F3F3F3;
+    		/*text-align: center;*/
+    		margin-right: 3px;
+    		margin-top: 3px;
+    		border: 1px solid lightgrey;
+    	}
+    	
+    	#ul li:hover {
+    		cursor: pointer;
+    	}
+    	
+    	#ul li:last-child {
+    		margin-right: 0px;
+    	}
+    	.btn_gw{
+    	   float: right;
+    	}
+    	
+    	
+.below{width: 80%; margin: auto;}
+.below .tabm { margin: 11px 5px 0px 5px; padding-left: 10px; border-bottom: 1px solid #fff; z-index: 1;}
+.below .tabm li { margin: 0px; display: inline; list-style-type: none; }
+.below .tabm a, a.active { margin: 0px; padding: 5px 5px 0px 5px; border: 1px solid #fff; color: #000; background: #fff; text-decoration: none;}
+.below .tabm a.active { background: #F3F3F3; border-bottom: 3px solid #F3F3F3; }
+.below .tabm a:hover { background: #F3F3F3;}
+.below .activecontent { margin: 0px 5px; padding: 3px; border: 1px solid #fff; border-top: none; height: 130px; color: #000; background: #F3F3F3;}
+.below .hiddencontent { display: none; }
+.kongg {width: 100px; height: 25px;}

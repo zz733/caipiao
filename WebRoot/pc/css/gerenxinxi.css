@@ -1,0 +1,46 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+#header{
+	width: 850px;
+	height: 45px;
+	background: #3990C6;
+}
+#header_span{
+				font-family: "楷体";
+				font-size: 20px;
+				margin-left: 20px;
+				color: white;
+			}
+#leirong{
+	width: 700px;
+	height: 500px;
+	margin-top: 50px;
+	margin-left: 80px;
+	border: 2px solid #EEEEEE;
+		
+}
+.div_fg{
+	margin-bottom: 15px;
+	width:500px;
+}
+.div_span{
+	font-size: 14px; 
+}
+.div_span2{
+	width:100px;
+	padding-top: 2px;
+	margin-left: 10px;
+	font-size: 15px;
+	font-weight: 500;
+}
+#touxiang{
+	margin-top: 40px;
+	margin-left: 290px;
+}
+
+.div_fg a{
+	float:right;
+}

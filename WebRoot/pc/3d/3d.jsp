@@ -1,0 +1,216 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>后三尾数</title>
+			<link rel="stylesheet"
+			href="${pageContext.request.contextPath}/pc/css/bootstrap.min.css" />
+		<script type="text/javascript"
+			src="${pageContext.request.contextPath}/pc/js/jquery-1.8.1.min.js"></script>
+		<script type="text/javascript"
+			src="${pageContext.request.contextPath}/pc/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css"
+			 href="${pageContext.request.contextPath}/pc/3d/3d.css" />
+	
+		<script type="text/javascript"
+			src="${pageContext.request.contextPath}/pc/js/combineData.js"></script>
+		<script type="text/javascript"
+			<script type="text/javascript" 
+    src="${pageContext.request.contextPath}/pc/js/layer/layer.js"></script>
+			<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/accordion-single.js"></script>
+	</head>
+	<body>
+			<!--
+            	作者：280191146@qq.com
+            	时间：2017-12-02
+            	描述：走势图区
+            -->
+			<div class=""
+				style="width: 100%;">
+
+				<table class="tabl" border="1"
+					id="hswsTu">
+					<thead>
+						<tr>
+							<th rowspan="2" id="yincang">
+								期号
+							</th>
+							<th rowspan="2" colspan="3">
+								号码
+							</th>
+							<th colspan="10">
+								第一位
+							</th>
+							<th colspan="10">
+								第二位
+							</th>
+							<th colspan="10">
+								第三位
+							</th>
+							<th colspan="3">
+								除3个数
+							</th>
+						</tr>
+						<tr>
+							<th class="num">
+								0
+							</th>
+							<th class="num">
+								1
+							</th>
+							<th class="num">
+								2
+							</th>
+							<th class="num">
+								3
+							</th>
+							<th class="num">
+								4
+							</th>
+							<th class="num">
+								5
+							</th>
+							<th class="num">
+								6
+							</th>
+							<th class="num">
+								7
+							</th>
+							<th class="num">
+								8
+							</th>
+							<th class="num">
+								9
+							</th>
+							<th class="num">
+								0
+							</th>
+							<th class="num">
+								1
+							</th>
+							<th class="num">
+								2
+							</th>
+							<th class="num">
+								3
+							</th>
+							<th class="num">
+								4
+							</th>
+							<th class="num">
+								5
+							</th>
+							<th class="num">
+								6
+							</th>
+							<th class="num">
+								7
+							</th>
+							<th class="num">
+								8
+							</th>
+							<th class="num">
+								9
+							</th>
+
+							<th class="num">
+								0
+							</th>
+							<th class="num">
+								1
+							</th>
+							<th class="num">
+								2
+							</th>
+							<th class="num">
+								3
+							</th>
+							<th class="num">
+								4
+							</th>
+							<th class="num">
+								5
+							</th>
+							<th class="num">
+								6
+							</th>
+							<th class="num">
+								7
+							</th>
+							<th class="num">
+								8
+							</th>
+							<th class="num">
+								9
+							</th>
+							<th class="num">
+								1
+							</th>
+							<th class="num">
+								2
+							</th>
+							<th class="num">
+								3
+							</th>
+						</tr>
+					</thead>
+		</table>
+		<div class="nextbig">
+		<div class="btn btn-group btn_hs" style="float:right;">
+						<button type="button" class="left btn btn-success btn-sm">◀</button>
+						<button type="button" class="right btn btn-success btn-sm">▶</button>
+						<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
+		</div>
+		</div>
+		
+			<div style="height: 150px;">
+		    </div>
+		</div>
+						<th class="num">
+							4
+						</th>
+	</body>
+	
+	<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/jquery-3.2.1.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/admin/lib/layer/2.4/layer.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/admin/static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/admin/lib/laypage/1.2/laypage.js"></script>
+	<script>
+	    $(function(){
+	      // alert($);
+	    });
+	</script>
+
+	
+   <script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/jquery.actual.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/raphael/v2.1.0/raphael.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/draw2d/jquery-ui-1.8.23.custom.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/draw2d/Class.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/pc/js/draw2d/draw2d.js"></script>
+
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/pc/3d/3d.js?12345678"></script>
+
+</html>

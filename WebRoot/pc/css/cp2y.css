@@ -1,0 +1,277 @@
+﻿/*登录栏*/
+
+.n_top {
+	height: 60px;
+	position: relative;
+	width: 980px;
+	margin: 0 auto;
+	z-index: 100;
+	text-align: left;
+}
+
+.n_top a:hover {
+	text-decoration: underline;
+}
+
+.n_top a#n_welcome_signin:hover {
+	text-decoration: none;
+}
+
+
+/* .n_top h1{width:190px;height:60px;float:left;background:url(../../images/new/cp2y/GQLOGO.gif) -5px 0 no-repeat;} */
+
+.n_top h1 {
+	width: 190px;
+	height: 60px;
+	float: left;
+	background: url(../../images/new/cp2y/icons.png?v=20140217) -25px 0 no-repeat;
+}
+
+.n_top h1 a {
+	width: 190px;
+	height: 60px;
+	display: block;
+}
+
+.n_top_main {
+	width: 500px;
+	padding-left: 10px;
+	height: 60px;
+	float: left;
+	background: url(../../images/new/cp2y/icons.png?v=20140127) -228px -59px no-repeat;
+}
+
+.n_top_main #n_welcome {
+	height: 25px;
+	position: relative;
+	padding-top: 8px;
+}
+
+.n_top_main p {
+	height: 20px;
+	line-height: 20px;
+	color: #DFE2E6;
+	padding-left: 0;
+	margin: 0
+}
+
+.n_top_main p a {
+	color: #6B93D5;
+	padding: 0 5px 0 0x;
+}
+
+.n_top_main {
+	width: 500px;
+	padding-left: 10px;
+	height: 60px;
+	float: left;
+	background: url(../../images/index/icons.jpg?v=20140127) -228px -59px no-repeat;
+}
+
+.n_top_main #n_welcome {
+	height: 25px;
+	position: relative;
+	padding-top: 8px;
+}
+
+#n_welcome span {
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	width: 65px;
+	padding-left: 0;
+}
+
+#n_welcome #n_welcome_signin {
+	width: 40px;
+	height: 20px;
+	text-align: center;
+	float: left;
+	background: url(../../images/new/index/icons.gif) -90px -190px;
+	color: #fff;
+	line-height: 20px;
+	margin-right: 12px;
+}
+
+#n_welcome_signup {
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	width: 60px;
+	color: #F96515;
+}
+
+#n_welcome_signup_other {
+	width: 82px;
+	height: 18px;
+	line-height: 18px;
+	float: left;
+	color: #F67C00;
+	border: 1px #DFE2E6 solid;
+	background: #F3F3F3 url(../../images/new/index/icons.gif?v=20140127) 68px -69px no-repeat;
+	border-radius: 2px;
+	text-indent: 6px;
+}
+
+#n_welcome_signup_others {
+	position: absolute;
+	z-index: 12;
+	width: 82px;
+	height: 105px;
+	border: 1px #DFE2E6 solid;
+	background: #F3F3F3 url(../../images/new/index/icons.gif?v=20140127) 68px -120px no-repeat;
+	border-radius: 2px;
+	left: 177px;
+	top: 8px;
+	z-index: 999;
+	display: none;
+	cursor: pointer;
+}
+
+#n_welcome_signup_others b {
+	width: 82px;
+	height: 20px;
+	line-height: 18px;
+	text-indent: 6px;
+	display: block;
+	font-weight: normal;
+	color: #F67C00;
+}
+
+#n_welcome_signup_others a {
+	width: 50px;
+	height: 21px;
+	line-height: 21px;
+	display: block;
+	padding-left: 28px;
+	color: #4C80CE;
+	background: url(../../images/new/index/icons.gif?v=20140127) -70px -52px no-repeat;
+}
+
+#n_welcome_signup_others a.n_qq_icon {
+	background-position: -70px -73px;
+}
+
+#n_welcome_signup_others a.n_weibo_icon {
+	background-position: -70px -94px;
+}
+
+#n_welcome_signup_others a.n_wechat_icon {
+	background-position: -70px -115px;
+}
+
+#n_welcome strong {
+	height: 22px;
+	line-height: 22px;
+	float: left;
+	width: 50px;
+	padding-left: 5px;
+	font-weight: normal;
+}
+
+#n_welcome_user_nick {
+	padding-left: 18px;
+	padding-right: 15px;
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	color: #F67C00;
+	background: url(../../images/new/index/icons.gif?v=20140127) -170px -126px no-repeat
+}
+
+.n_welcome_account {
+	width: 87px;
+	position: relative;
+	float: left;
+	height: 22px;
+}
+
+#n_welcome_account {
+	width: 70px;
+	height: 18px;
+	line-height: 18px;
+	position: absolute;
+	color: #F67C00;
+	border: 1px #DFE2E6 solid;
+	background: #F3F3F3 url(../../images/new/index/icons.gif?v=20140127) 58px -69px no-repeat;
+	border-radius: 2px;
+	text-indent: 6px;
+	left: 0;
+	top: 0;
+	z-index: 9;
+}
+
+.n_welcome_account .welcome_accountOn {
+	border-bottom-color: #F3F3F3!important;
+	background-position: 58px -120px!important;
+}
+
+#n_welcome_account:hover {
+	text-decoration: none;
+}
+
+#n_welcome_accounts {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 18px;
+	cursor: pointer;
+	width: 123px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px #DFE2E6 solid;
+	background: #F3F3F3;
+	border-radius: 2px;
+	z-index: 999;
+	padding-left: 6px;
+	color: #333;
+	z-index: 1;
+}
+
+#n_welcome_accounts i {
+	color: #F96515;
+	font-style: normal;
+	padding: 0 5px;
+}
+
+#n_welcome_signout {
+	color: #FF5400;
+	line-height: 20px;
+	float: left;
+}
+
+.n_top_tip {
+	width: 268px;
+	height: 60px;
+	float: right;
+	text-align: right;
+}
+
+.n_top_tip p {
+	color: #DFE2E6;
+	line-height: 32px;
+	height: 25px;
+	padding-top: 8px;
+	line-height: 24px;
+	margin: 0
+}
+
+.n_top_tip p a {
+	color: #333;
+	padding: 0;
+}
+
+.n_top_tip strong {
+	width: 170px;
+	height: 26px;
+	background: url(../../images/nav/hotline.jpg?v=20140127) -10px -3px no-repeat;
+	float: left;
+}
+
+.n_top_tip .n_top_kefu {
+	float: right;
+	width: 96px;
+	height: 26px;
+	background: url(../../images/nav/top_kefu_03.jpg) right -2px no-repeat;
+	display: block
+}

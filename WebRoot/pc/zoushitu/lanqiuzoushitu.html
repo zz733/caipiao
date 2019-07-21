@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>篮球走势</title>
+		<link rel="stylesheet" href="../css/lanqiuzoushitu.css" />
+		<!--<link rel="stylesheet" href="../css/bootstrap.min.css" />-->
+		
+		<script type="text/javascript" src="../js/jquery-3.2.1.js" ></script>
+			<script type="text/javascript" src="../js/jquery-1.8.1.min.js" ></script>
+	<script type="text/javascript" src="../js/jquery.actual.js" ></script>
+    <script type="text/javascript" src="../js/raphael/v2.1.0/raphael.js"></script>
+	<script type="text/javascript" src="../js/draw2d/jquery-ui-1.8.23.custom.min.js"></script>
+	<script type="text/javascript" src="../js/draw2d/Class.js"></script>
+	<script type="text/javascript" src="../js/draw2d/draw2d.js"></script>
+   	<script type="text/javascript" src="../js/lanqiuzoushitu.js" ></script>
+
+	</head>
+	<body>
+		<div id="main">
+			<!-- 走势图  -->
+			<div id="top">
+				
+				<div id="head">
+					<span>标注形式选择：</span>
+					<label class="checkbox-inline"><input type="checkbox" id="dzxt"> 带折线</label>
+					<label class="checkbox-inline"><input type="checkbox" id="inlineCheckbox2"> 遗漏分层</label>
+				</div>
+<!-- class="table" cellspacing="1" -->
+				<table id="qswsTu" class="table"  onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" >
+					<thead>
+						<tr>
+							<td rowspan="2" width="85px" style="font-weight: 900;" id="yincang">期号<img src="../images/daohanglan/guanbi.png" id="updown"/></td>
+							<th colspan="4">一区</th>
+							<th colspan="4">二区</th>
+							<th colspan="4">三区</th>
+							<th colspan="4">四区</th>
+							<th colspan="2">大小</th>
+							<th colspan="2">奇偶</th>
+							<th colspan="3">012路</th>
+							<th colspan="10">尾号走势</th>
+						</tr>
+						<tr>
+							<th width="20px">01</th>
+							<th width="20px">02</th>
+							<th width="20px">03</th>
+							<th width="20px">04</th>
+							<th width="20px">05</th>
+							<th width="20px">06</th>
+							<th width="20px">07</th>
+							<th width="20px">08</th>
+							<th width="20px">09</th>
+							<th width="20px">10</th>
+							<th width="20px">11</th>
+							<th width="20px">12</th>
+							<th width="20px">13</th>
+							<th width="20px">14</th>
+							<th width="20px">15</th>
+							<th width="20px">16</th>
+							<th width="26px">0</th>
+							<th width="26px">1</th>
+							<th width="26px">2</th>
+							<th width="20px">0</th>
+							<th width="20px">1</th>
+							<th width="20px">2</th>
+							<th width="20px">3</th>
+							<th width="20px">4</th>
+							<th width="20px">5</th>
+							<th width="20px">6</th>
+							<th width="20px">7</th>
+							<th width="20px">8</th>
+							<th width="20px">9</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+
+				</table>
+				
+			</div>
+	</body>
+
+	
+</html>

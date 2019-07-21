@@ -1,0 +1,96 @@
+	  #all
+		    {
+		    	
+		    	margin: auto;
+		    	overflow:hidden ;
+		    	
+		    }
+		    .fubei_search
+		    {
+		    	width: 90%;
+		    	height: 300px;
+		    	margin-left: 100px;
+		    }
+			#zi
+			{
+				margin-left: 130px;
+				font-size: 30px;
+				position: relative;
+				top: 10px;
+			}
+			
+			#delete:hover
+			{
+				color: red;
+			}
+		
+		    #search
+			{
+				
+				width: 90%;
+				height: 300px;
+				background-color:ghostwhite;
+				margin: auto;
+				margin-left: 100px;
+			}
+			#search_table
+			{
+				width: 90%;
+				height: 300px;
+				margin-left: 20px;
+				margin-top: 10px;
+				
+			}
+		   #search_kuang
+		   {
+		   	width: 150px;
+		   	height:30px;
+		   	border:  1px solid lightgrey;
+		   	
+		   }
+		  
+		   #search_zi
+		   {
+		   	font-size: 15px;
+		   	
+		   }
+		   
+			#fubei_table
+			{
+				width: 90%;
+				height: 500px;
+				margin: auto;
+				margin-left: 200px;
+				margin-top: 100px;
+			}
+			#fubei_zi
+			{
+				font-size: 20px;
+				font-weight: 700;
+				position: relative;
+                top:25px ;
+                color: #269ABC;
+ 			}
+			#fubei_box
+			{
+				width:90%;
+				height: 400px;
+				margin-top: 20px;
+			}
+		   	.table
+			{
+				width: 100%;
+				margin: auto;
+			}
+			#fubei_button
+			{
+			  position: relative;
+			  left: 700px;
+			}
+		  #searchbtn2
+		  {
+		  	position: relative;
+		  	
+		  	left: 1000px;
+		  }
+			

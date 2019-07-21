@@ -1,0 +1,119 @@
+.main{
+	margin: 0 auto;
+}
+.head{
+	margin: auto;
+	width: 540px;
+	height: 90px;
+	text-align: center;
+}
+.head img{
+	float: left;
+}
+.head span{
+	font-size: 25px;
+	font-weight: 500;
+	display: block;
+	padding: 25px;
+}
+.content{
+	width: 100%;
+	background-color: #0E8FCB;
+}
+.content img{
+	width: 450px;
+	height: 453px;
+	margin-left: 455px;
+}
+.right{
+	background-color: #EFEFEF;
+	float: right;
+	width: 300px;
+	height: 380px;
+	margin-top: 40px;
+	margin-right: 15px;
+}
+.info{
+	/*border: 1px teal solid;*/
+	width: 280px;
+	height: 330px;
+	margin: auto;
+   margin-top: 30px;
+}
+.tou{
+	font-size: 17px;
+	font-weight: bolder;
+	margin-left: 10px;
+	height: 40px;
+	border-bottom: solid 1px #ddd;
+}
+.center{
+	margin: auto;
+	/*border: 1px red solid;*/
+	width: 260px;
+	height: 200px;
+	margin-left: 10px;
+	margin-top: -10px;
+	border-bottom: solid 1px #ddd;
+}
+.mima{
+	margin-left:14px ;
+}
+.input{
+	width: 240px;
+	height: 38px;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.center span{
+	font-size: 14px;
+	font-weight: 600;
+}
+.center input{
+	margin-left: 10px;
+	border-color: #DADADA;
+}
+
+input::-webkit-input-placeholder { /* WebKit browsers */ 
+
+font-weight: 700;
+} 
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+	
+font-weight: 700;
+} 
+input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+	
+font-weight: 700;
+} 
+input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+	
+font-weight: 700;
+} 
+.btn{
+	margin-top: 15px;
+	margin-left: 20px;
+	/*border-bottom:solid 1px #ddd;*/
+}
+.foot{
+	width: 260px;
+	height: 30px;
+	margin-top: 10px;
+}
+.word2{
+	float: right;
+}
+.wei{
+	font-weight: 600;
+	color: #989898;
+	line-height: 50px;
+	text-align: center;
+}
+.center img{
+	height: 36px;
+	width: 70px;
+	float: right;
+	margin-top: -37px;
+	margin-right: 15px;
+}
+

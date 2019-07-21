@@ -1,0 +1,70 @@
+package com.action.admin;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.pojo.Admin;
+import com.service.admin.TongjiService;
+import com.util.SmsUtil;
+/**
+ * 统计 会员  订单  短信信息通知总条数	总数    今日   昨天  本周   本月
+ * @author 肖
+ *
+ */
+@Controller
+@RequestMapping("tongji.do")
+public class TongjiAction {
+	@Autowired
+	private TongjiService tongjiService;
+	
+	@RequestMapping(params="p=tongjilisting")
+	public String tongjilisting(HttpServletRequest request,HttpServletResponse response)
+	{
+		Admin admin=(Admin) request.getSession().getAttribute("admin");
+		if(admin==null)
+		{
+			return "/admin/login.jsp";
+		}
+		
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		Timestamp day=new Timestamp(System.currentTimeMillis());
+		String daydate=sdf.format(day);  //得到今天的日期
+		
+		
+		
+		Calendar calendar=Calendar.getInstance();	//得到日历
+		
+		
+		calendar.add(Calendar.DATE,-1);
+		String yesterday = new SimpleDateFormat( "yyyy-MM-dd ").format(calendar.getTime());//得到昨天的日期
+	
+		
+		Date date=calendar.getTime();
+		calendar.set(Calendar.DAY_OF_MONTH, 1);		//得到本月1号
+		date=calendar.getTime();
+		String monthone=sdf.format(date);
+
+		
+		calendar.set(calendar.DAY_OF_MONTH, calendar.getActualMaximum(calendar.DAY_OF_MONTH));	//得到本月最后一天
+		date=calendar.getTime();
+		String monthlast=sdf.format(date);
+		
+		
+		
+		Map tjmap=tongjiService.tongjilisting(daydate,yesterday,monthone,monthlast); 	//统计 会员   and 订单  and	短信消息通知
+		request.setAttribute("tjmap", tjmap);
+		
+		
+		return "/admin/welcome.jsp";
+	}
+}

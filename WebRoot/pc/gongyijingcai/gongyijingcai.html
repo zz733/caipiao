@@ -1,0 +1,318 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/pc/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/gongyijingcai.css"/>
+		<script src="../js/mui.min.js"></script>
+	</head>
+     <style>
+     	/*#bh_aaa{width:800%;background: yellow;}*/
+     	
+     </style>
+  <body>
+  	
+  	<!--
+      	作者：563581459@qq.com
+      	时间：2017-11-09
+      	描述：标签
+      -->
+      
+      <div class="main">
+      	<div class="gyjc_head">
+      	<div class="two_biaoqian">
+      		<li>公益竞猜&nbsp;第5期</li>
+      	</div>
+      	<div class="one_biaoqian">
+      		<ul class="hjfb">
+  			<li>合计福贝：<input type="text" class="form-control"></li>
+  			<li>福贝余额：<input type="text" class="form-control"></li>
+  			<li><a href="#" style="color: red;">福贝充值</a><li>
+  			
+  			</ul>
+  	</div>
+  	</div>
+    <!--
+    	作者：563581459@qq.com
+    	时间：2017-11-09
+    	描述：表
+    -->	
+    <div class="table_clq">
+  <table    class="table table-border table-bordered table-striped">
+    
+  <tbody>
+  	<!--
+      	作者：563581459@qq.com
+      	时间：2017-11-06
+      	描述：标签-猜篮球
+      -->
+      <input class="btn disabled radius" type="button" value="猜篮球">
+  	<!--<thead>
+           <tr>
+              <th class="text-head"><input class="btn disabled radius" type="button" value="猜篮球"></th>
+		   </tr>
+        </thead> -->
+    <tr class="text-c">
+    	<!--
+        	作者：563581459@qq.com
+        	时间：2017-11-06
+        	描述：篮球号
+        -->
+      <td class="zi_01" >1</td>
+      <td class="zi_02" >2</td>
+       <td class="zi_00" >3</td>
+      <td class="zi_01" >4</td>
+       </tr>
+       
+      	          	
+    <tr class="text-c div_aaa"> 
+    <td>
+      	<div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number" value="1" id="redone"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+       <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+       	
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number">
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+        </tr>
+      <tr class="text-c">
+        <td class="zi_02" >5</td>
+      <td class="zi_00" >6</td>
+       <td class="zi_01" >7</td>
+      <td class="zi_02" >8</td>
+    </tr>
+    
+    <tr class="text-c div_aaa">
+      
+       <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+       <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+    </tr>
+    
+    <tr>
+		<td height="5"></td>
+	</tr>
+    
+    <tr class="text-c">
+       <td class="zi_00" >9</td>
+      <td class="zi_01" >10</td>
+       <td class="zi_02" >11</td>
+      <td class="zi_00" >12</td>
+      </tr>
+      <tr class="text-c">
+      	<td>
+      	<div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div>
+      </td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      
+       <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      </tr>
+      <tr class="text-c">
+        <td class="zi_01" >13</td>
+      <td class="zi_02" >14</td>
+       <td class="zi_00" >15</td>
+      <td class="zi_01" >16</td>
+    </tr>
+     <tr class="text-c">
+      
+       <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+       <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_aaa" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+    </tr>
+    
+  </tbody>
+   </table>
+   </div>
+   <!--
+   	作者：563581459@qq.com
+   	时间：2017-11-09
+   	描述：大小单双
+   -->
+   <div class="table_caidxds">
+   	<table class="table table-border table-bordered table-striped">
+   		<tbody>
+   			<input class="btn disabled radius" type="button" value="猜单双大小">
+   	<!--<thead>
+           <tr>
+              <th class="text-head"><input class="btn disabled radius" type="button" value="猜单双大小"></th>
+		   </tr>
+        </thead> -->
+    <tr class="text-c div_bbb">
+    	<!--
+        	作者：563581459@qq.com
+        	时间：2017-11-06
+        	描述：单双大小
+        -->
+      <td style="background-color:cornflowerblue;"><input class="btn disabled radius" type="button" value="单小"></td>
+      <td style="background-color:cornflowerblue;"><input class="btn disabled radius" type="button" value="单大"></td>
+      <td style="background-color:cornflowerblue;"><input class="btn disabled radius" type="button" value="双小"></td>
+      <td style="background-color:cornflowerblue;"><input class="btn disabled radius" type="button" value="双大"></td>
+    </tr>
+    <tr class="text-c">
+      <td>
+      	<!--
+          	作者：563581459@qq.com
+          	时间：2017-11-06
+          	描述：按钮加减
+          -->
+      	<div class="mui-numbox div_bbb" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_bbb" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+				<td><div class="mui-numbox div_bbb" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+				<td><div class="mui-numbox div_bbb" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+   </tbody>
+   </table>
+   </div>
+   <!--
+   	作者：563581459@qq.com
+   	时间：2017-11-09
+   	描述：0,1,2
+   -->
+   <div class="table_cai012">
+   	<table class="table table-border table-bordered table-striped">
+   		<tbody>
+   			<input class="btn disabled radius" type="button" value="猜余数">
+   	<!--<thead>
+           <tr>
+              <th class="text-head"><input class="btn disabled radius" type="button" value="猜单双大小"></th>
+		   </tr>
+        </thead> -->
+    <tr class="text-c div_ccc">
+    	<!--
+        	作者：563581459@qq.com 
+        	时间：2017-11-06
+        	描述：0,1,2按钮
+        -->
+      <td style="background-color:#FF6666;"><input class="btn disabled radius" type="button" value="0"></td>
+      <td style="background-color:#02AAE9;"><input class="btn disabled radius" type="button" value="1"></td>
+      <td style="background-color:#339933;"><input class="btn disabled radius" type="button" value="2"></td>
+    </tr>
+    <tr class="text-c">
+      <td>
+      	<!--
+          	作者：563581459@qq.com
+          	时间：2017-11-06
+          	描述：按钮加减
+          -->
+      	<div class="mui-numbox div_ccc" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+      <td><div class="mui-numbox div_ccc" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+				</div></td>
+				<td><div class="mui-numbox div_ccc" data-numbox-min='0' data-numbox-max='999' data-numbox-step='10'>
+					<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+					<input class="mui-input-numbox" type="number"/>
+					<button class="mui-btn mui-btn-numbox-plus" type="button" >+</button>
+				</div></td>
+				
+   	</div>
+   	 </tbody>
+   </table>
+   	 <div>
+				
+		<input  class="fu" id="zi_2" style="float: right;" type="submit" value="提&nbsp;&nbsp;交"  />
+	  
+   </div>
+  </div>
+   
+  </body>
+</html>
+
+		
+
+
+
+
+
+
+

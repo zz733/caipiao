@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>单纯的易乐智能选号系统路过~~~</title>
+	</head>
+		<style>
+		body{
+			margin: 0px;	
+		}
+		.tableStyle{
+			text-align: center;
+			width: 100%;
+			border-width: 0px;
+		}
+		.trStyle{
+			text-align: center;
+			width: 100%;
+			height: auto;
+			align-content: center;
+		}
+		.tdStyle{
+			/*align-content: center;*/	
+			padding-top: 0px;
+		}
+		#canvas_container{
+            	position:absolute;
+				border:none;
+				overflow:auto;
+        }
+	</style>
+	<body > 
+ 		<table class="drawTable tableStyle" onselectstart="javascript:/*IE8 hack*/return false" id="gfx_holder" style="-webkit-tap-highlight-color: rgba(0,0,0,0);" ></table>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.8.1.min.js" ></script>
+	<script type="text/javascript" src="js/jquery.actual.js" ></script>
+    <script type="text/javascript" src="js/raphael/v2.1.0/raphael.js"></script>
+	<script type="text/javascript" src="js/draw2d/jquery-ui-1.8.23.custom.min.js"></script>
+	<script type="text/javascript" src="js/draw2d/Class.js"></script>
+	<script type="text/javascript" src="js/draw2d/draw2d.js"></script>
+
+
+	<script>
+//初始化数据
+tableData = getTableData();
+//初始化表格背景颜色
+var bgColor = new Array(); //2二位数的二维数组
+for (var ibgColor = 0; ibgColor < parseInt(tableData[0].length/10); ibgColor++) {
+	bgColor[ibgColor] = createNoDumplateColor(bgColor);
+}
+$(function(){
+	//初始化表格控件
+	$table = $(".drawTable");
+	//动态产生表格整体控件
+	for (var i = 0; i < tableData.length; i++) {
+		var trData = tableData[i];
+		var $tr = $("<tr></tr>").toggleClass("trStyle");
+		for (var j = 0; j < trData.length; j++) {
+			var $td = $("<td></td>").toggleClass("tdStyle");
+			var tdData = trData[j]+"";
+			$td.text(tdData);
+			$td.css("background-color",bgColor[parseInt(j/10)][0]);	
+			$td.css("color",bgColor[parseInt(j/10)][1]);
+			$tr.append($td);
+		}
+		$table.append($tr);
+	}
+	table_canvas = null;
+	isInitOk = false;
+	drawColorBall();
+	
+	$(window).resize(function(){
+		if(isInitOk){
+			//先删除历史
+			$("svg").remove(); //直接移除控件
+			//重写测画
+			drawColorBall();
+		}
+	});
+})
+//获取数据
+function getTableData(){
+	var isTest = true;
+	var tableData = new Array();
+	if(isTest){
+		//暂时模拟设置本地数据
+		for (var i = 0; i < 24; i++) {
+			var trArr =  new Array();
+			var randomPosition = 0;
+			for (var j = 0; j < 30; j++) {
+				if(j%10==0){
+					randomPosition = Math.floor(Math.random()*10);
+				}
+				if(j%10==randomPosition){
+					if(j+1<10)trArr[j] = "-0"+(j+1);
+					else 
+					trArr[j] = "-"+(j+1);
+				}else{
+					if(j+1<10)trArr[j] = "0"+(j+1);
+				 	else 
+				 	trArr[j] = (j+1);//(i+1)+""+(j+1);
+				}
+			}
+			tableData[i] = trArr;
+		}
+	}else{
+			//需要从服务器上获取数据代码
+	//TODO 
+	}
+	//返回二维数组结果
+	return tableData;
+}
+//在table标签上直接调用当前方法，传入this
+function drawColorBall(){
+	//设置表格中所有的单元格为同样大小的正方体(宽等于高)
+	var maxCeilLongside = 0;//最大的单元格边长
+	$("td").each(function(){
+		var currentWidth = $(this).width();
+		var currentHeight = $(this).height();
+		if(currentWidth>maxCeilLongside)maxCeilLongside=currentWidth;
+		if(currentHeight>maxCeilLongside)maxCeilLongside=currentHeight;
+	});
+	$("td").height(maxCeilLongside-5);
+	$("td").width(maxCeilLongside);
+	//得到圆的圆点X+圆点Y+圆半径 并画图
+	table_canvas = new draw2d.Canvas("gfx_holder");//if(!table_canvas) 
+	$("svg").css("top","0px");$("svg").css("left","0px");//由于自带样式中绝对定位有偏移
+	var lastPoints = new Array();  
+	var columnSize	 = parseInt(tableData[0].length/10);
+	var linePositons = new Array();
+	var lastAngles = new Array();
+	$("td").each(function(index,element){
+	  	var tdContent  = $(this).html();
+	  	var tdContents = tdContent.split("-");
+	  	if(tdContents.length>1){
+	  		var ceilWidth = $(this).width()/2;
+	  		var ceilHeight = $(this).height()/2;
+	  		var X = $(this).position().left+ceilWidth;//D
+	  		var Y = $(this).position().top+ceilHeight;//D
+	  		//连线 
+	  		var currentIndex = parseInt(index/10)%columnSize;
+	  		var lastPoint = lastPoints[currentIndex]; 
+	  		if(lastPoint){
+	  			var lastPointArr = lastPoint.split("-");
+	  			var preX = parseFloat(lastPointArr[0]);
+	  			var preY = parseFloat(lastPointArr[1]);
+	  			var lineX = X;
+	  			var lineY = Y;
+	  			var angle = (X-preX)/(Y-preY);
+	  			var lastAngle = lastAngles[currentIndex];
+	  			lastAngles[currentIndex] = angle;
+	  			if(angle==0){
+	  				preY = preY+ ceilHeight;	
+	  				lineY-= ceilHeight;
+	  			}
+	  			else if(angle>0){//顺梯
+	  				if(Math.abs(lineX-preX)<(ceilWidth*3)){//角对角
+	  					lineY = lineY - ceilHeight;
+	  					preX  = preX  + ceilWidth;
+	  				}else{//分离
+	  					preX += ceilWidth;
+	  					lineX    -= ceilWidth;
+	  				}
+	  			}
+				else if(angle<0){//逆梯
+	  				if(Math.abs(lineX-preX)<(ceilWidth*3)){//角对角
+	  					lineY -= ceilHeight;
+	  					preX  -= ceilWidth;
+	  				}else{//分离
+	  					preX -= ceilWidth;
+	  					lineX += ceilWidth;
+	  				}
+	  			}
+				var rgbArr = extractValueToArray(bgColor[currentIndex][1]);
+	  			table_canvas.addFigure(new draw2d.shape.basic.Line(preX,preY,lineX,lineY,
+	  				new draw2d.util.Color(rgbArr[0], rgbArr[1], rgbArr[2])));
+	  		}
+	  		//背景色
+	  		$(this).css("background-color",bgColor[parseInt(index/10%3)][1]);	
+	  		//在这里画圆 bgColor[parseInt(index/10%3)][1])
+//	  		table_canvas.addFigure(new draw2d.shape.basic.Oval(ceilWidth*2,ceilWidth*2,"#0000ff"),X-ceilWidth ,Y-ceilWidth);
+	  		table_canvas.addFigure(new draw2d.shape.basic.Label(tdContents[1],ceilWidth),X-ceilWidth,Y-ceilHeight); //D
+	  		lastPoints[currentIndex] = X+"-"+Y;	
+	  	}else{
+	  		$(this).html("");
+	  	}
+	});
+	isInitOk = true;
+}
+function createNoDumplateColor(oldColors){
+	var newColor = randomColorDigitalValue();
+	var isNew = true;
+	for (var i = 0; i < oldColors.length; i++) {
+		var oldColor = oldColors[i][1];
+		var newColorArr =extractValueToArray(newColor[1]);
+		var oldColorArr =extractValueToArray(oldColor);
+		for (var j = 0; j < newColorArr.length; j++) {
+			if(Math.abs(newColorArr[j]-oldColorArr[j])<30){
+				isNew=false;
+				break;
+			}
+		}
+		if(isNew)break;
+	}
+	if(isNew)return newColor
+	else return createNoDumplateColor(oldColors);
+}
+//生成随机颜色值
+function randomColorArrayValue(){	//数组值
+	var colorArray = new Array();
+	var r=Math.floor(Math.random()*(256-50));
+	var g=Math.floor(Math.random()*(256-50));
+	var b=Math.floor(Math.random()*(256-50));
+	colorArray[0] = r;
+	colorArray[1] = g;
+	colorArray[2] = b;
+	return colorArray;
+}
+function randomColorDigitalValue(){//数字值
+	var colorArray = new Array();
+	var randomColorArrayValueData = randomColorArrayValue();
+	var r=randomColorArrayValueData[0];
+	var g=randomColorArrayValueData[1];
+	var b=randomColorArrayValueData[2];
+	colorArray[0] =  "rgba("+r+','+g+','+b+','+0.3+")";
+	colorArray[1] =  "rgb("+r+','+g+','+b+")";//"rgba("+r+','+g+','+b+','+0.8+")";//
+	return colorArray;
+}
+function randomColorLetterValue(){//字母值
+	var colorArray = new Array();
+	var randomColorArrayValueData = randomColorArrayValue();
+	var r=randomColorArrayValueData[0];
+	var g=randomColorArrayValueData[1];
+	var b=randomColorArrayValueData[2];
+	//parseInt("0xFF")    var num=255; num.toString(16);
+	var hexValue = convertNumberToHex(r)+convertNumberToHex(g)+convertNumberToHex(b);
+	colorArray[0] =  "#"+ hexValue;
+	
+	colorArray[1] =  "#"+"4c"+hexValue;
+	alert(colorArray[1]);
+	return colorArray;
+}	
+function convertNumberToHex(number){
+	return number.toString(16).replace("-");
+}
+function extractValueToArray(value){
+	var numberArr = new Array();
+	var digValue = value.substring(value.lastIndexOf("(")+1,value.lastIndexOf(")"));
+	return digValue.split(",");
+}
+function convertValueToHex(value){
+	var disValueArr = extractValueToArray(value);
+	var g = convertNumberToHex(parseInt(disValueArr[1]));
+	if(r==0)r="00";
+	var r = convertNumberToHex(parseInt(disValueArr[0]));
+	if(g==0)g="00";
+	var b = convertNumberToHex(parseInt(disValueArr[2]));
+	if(b==0)b="00";
+	return "#"+r+g+b;
+}
+	</script>
+</html>

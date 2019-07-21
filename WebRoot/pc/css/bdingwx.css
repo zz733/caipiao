@@ -1,0 +1,37 @@
+.rightdiv{
+				/*margin-left: 45%;*/
+				margin-top: 55px;
+			}
+			.col-md-3 img{
+				border-radius: 50%;
+			}
+			.div_zi{
+				margin-top: 20px;
+			}
+			#header{
+				width: 100%;
+				height: 45px;
+				background: #3990C6;
+				padding-top: 10px;
+				
+			}
+			#header_span{
+				font-family: "楷体";
+				font-size: 20px;
+				padding-left: 20px;
+				color: white;
+			}.divcon{
+				margin-top: 30px;
+				margin-left: -10px;
+				
+			}
+			.div_center{
+				text-align: center;
+			}
+			#div_body{
+				width: 100%;
+				border: 1px solid #E7E7E7;
+				height: auto;
+				margin-top: 20px;
+				padding-bottom: 30px;
+			}

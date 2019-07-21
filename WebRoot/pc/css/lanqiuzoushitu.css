@@ -1,0 +1,87 @@
+#main{
+	margin: 0 auto;
+}
+
+#head{
+	margin: auto;
+	width: 80%;
+	text-align: center;
+	height: 34px;
+	background-color: #f6f6f6;
+}
+
+
+.table{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	font-size: 13px;
+	border-color: gray;
+	border-collapse: separate;
+	border: 1px solid #fff;
+}
+.table thead{
+	background-color: #CFDFF3;
+	font-weight: 200;
+}
+.table th{
+	font-weight: 300;
+}
+.table tbody{
+	background-color: #F7F0F0;
+}
+
+.box_qiu{
+	background-position: center center; 
+	background-image: url(../images/blue.jpg);
+	width: 16px;
+	height: 15px;
+	position: relative;
+}
+.box_dx{
+	background: #99CC99;
+    color: #fff;
+    width: 10px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+.box_jo{
+	background: #E0B26D;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+
+.box_green{
+	background: #339933;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+.box_blue{
+	background: #02AAE9;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+.box_red{
+	background: #FF6666;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+#updown{width: 15px;height: 15px;margin-left: 15px;}

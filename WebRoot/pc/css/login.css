@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+.login_info {
+}
+a {
+   text-decoration: none;	
+}
+
+.text {
+	width: 260px;
+	height: 40px;
+	margin: 0 auto;
+	background-color: #fff;
+	margin-top: 10px;
+	
+}
+.ln_imgBox{
+	width: 60%;
+	margin:auto;
+	
+	/* margin-right:10px; */
+	/* min-width: 1360px; */
+	background: url(../img/beijingtu.jpg) no-repeat;
+	background-size: 100% 100%; 
+	height:520px;
+	margin-top: 90px;
+	 
+}
+.ln_gzformDiv{
+	width: 675px;
+	height: 100%;
+    margin-top: -70px;
+	    
+}
+.ln_gzform{
+	
+	width: 300px;
+	height: 225px;
+	float: right;
+	margin-top: 5px;
+	margin-right: -135px;
+	background: #e2e2e2;
+	/* background-color:rgba(255,255,255,0.5) */
+}
+
+.tj {
+	width: 260px;
+	height: 40px;
+	margin: 0 auto;
+	
+	margin-top: 10px;
+}
+
+.text .sp1{
+	position: absolute;
+	z-index: 100;
+	height: 15px;
+	width: 10px;
+	margin-top: 10px;
+	margin-left: 5px;
+	/*background: url(../img/usr.png) no-repeat;*/
+}
+
+.text .sp2{
+	position: absolute;
+	z-index: 100;
+	height: 30px;
+	width: 20px;
+	margin-top: 10px;
+		margin-left: 5px;
+
+	
+}
+
+.text .text_name {
+	width: 230px;
+    position: relative;
+    height: 40px;
+    margin-top:0px;
+    padding-left: 30px;
+}
+.zixun{
+	position: relative;
+	top:-40px;
+	left: 170px;
+	width: 90px;
+	height: 40px;
+	color: #777;
+	padding-left: 15px;
+	border: 0px;
+	
+}
+.text .text_password {
+	width: 260px;
+    position: relative;
+    height: 40px;
+    margin-top:0px;
+    padding-left: 30px;
+
+    
+}
+
+.text .text_password1 {
+	width: 160px;
+    position: relative;
+    height: 40px;
+    margin-top:0px;
+   /*padding-right: 160px;*/
+
+    
+}
+
+.tj .text-dl{
+    width: 260px;
+    position: relative;
+    height: 40px;
+    margin-top:0px;
+    background: #249cad;	
+    border: 0px;
+    color: white;
+    font-size: 16px;
+}
+.ln_getyzm_a{
+	color: #249cad;
+	width: 87px;
+	height:40px; 
+	position: relative;
+	text-decoration: none;
+	cursor:pointer;
+}
+.ln_getyzm{
+	position: relative;
+	left: 40px;
+	height: 20px;
+	line-height: 40px;
+}
+.db{ display:block;}
+.logbtn{
+	float: right;
+	color:#333;
+    width: 80px;
+   line-height: 40px;
+
+margin-right: 50px;
+margin-top:-70px;
+height: 40px;
+text-align: center;
+border: solid 1px #333;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+}	
+fr{ float: right;}
+a.logbtn:hover{
+	text-decoration: none;
+	color:blue;
+	border-color:blue;}
+			

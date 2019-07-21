@@ -1,0 +1,157 @@
+/* --- RESET --- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+/***********设置下拉列表的样式************/
+.flat{
+	position: relative;
+	width: 250px;
+	height:32px;
+	cursor: pointer;
+	font-weight: 200;
+	background: #428BCB;     /*设置下拉列表未触及的背景颜色*/
+	padding: 4px 0px 8px;    
+	
+	border-radius: 5px;
+	
+	color:  #000;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.flat.open{
+	z-index: 2;
+}
+
+.flat:hover,
+.flat.focus{
+	background: #73A9D8;    /*设置下拉列表触及后的背景颜色*/
+}
+
+/* CARAT */
+
+
+/*右边三角图标的样式*/
+.flat .carat,
+.flat .carat:after{
+	position: absolute;
+	right: 14px;
+	top: 50%;
+	margin-top: -3px;
+	border: 6px solid transparent;
+	border-top: 6px solid #FFF;
+	z-index: 1;
+	
+	-webkit-transform-origin: 50% 20%;
+	-moz-transform-origin: 50% 20%;
+	-ms-transform-origin: 50% 20%;
+	transform-origin: 50% 20%;
+	
+}
+
+.flat .old{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+.flat select{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.flat.touch select{
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+/* SELECTED FEEDBACK ITEM */ 
+.flat .selected {
+    color: #FFF;     /* 设置被选中的下拉列表字体颜色*/
+}
+
+.flat .selected,
+.flat li{
+	display: block;
+	font-size: 14px;     /* 设置下拉列表字体大小*/
+	font-weight: 400;
+	text-transform: uppercase;
+	line-height: 1;
+	padding: 6px 12px;     /* 设置被选中的下拉列表的大小*/
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.flat div{
+	position: absolute;
+	height: 0;
+	left: 0;
+	right: 0;
+	top: 100%;
+	margin-top: 1px;
+	background: #73A9D8;       /* 设置未被选中的下拉列表的背景颜色   动态*/
+	overflow: hidden; 
+	opacity: 0;
+	color: #04724E;    /* 设置未被选中的下拉列表字体颜色*/
+	
+	border-radius: 5px;
+}
+
+.flat:hover div{
+	background: #73A9D8;     /* 设置未被选中的下拉列表的背景颜色*/
+	
+	border-radius: 5px;
+}
+
+.flat.open div{
+	opacity: 1;
+	z-index: 2;
+}
+
+.flat li{                 /* 设置下拉列表选项的样式*/
+	list-style: none;
+	height:32px;
+	padding: 9px 12px;
+	border-bottom: 1px solid #29AF84;    
+}
+
+.flat li:last-child {
+    border-bottom: 0;
+}
+.flat li.focus{
+	background: #73A9D8;    /* 设置被选中的下拉列表的背景颜色   动态*/
+	position: relative;
+	z-index: 3;
+	color: #fff;     /* 设置被选中的下拉列表的字体颜色   动态*/
+}
+
+.flat li.active{
+	background: #428BCB;      /* 设置被选中的下拉列表的背景颜色   固定*/
+	color: #fff;
+}

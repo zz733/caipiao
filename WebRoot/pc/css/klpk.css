@@ -1,0 +1,31 @@
+
+.flbox {
+	width: 105px;
+	margin: 0 auto;
+}
+
+.fl {
+	float: left;
+	width: 15px;
+	padding-left: 15px;
+	margin-left: 5px;
+	height: 20px;
+	background: url(../../image/klpk/klpk.jpg) no-repeat;
+}
+
+.heit {
+	background-position: 0 -5px;
+}
+
+.hongt {
+	background-position: -60px -5px;
+}
+
+.meih {
+	background-position: -30px -5px;
+}
+
+.fangp {
+	background-position: -90p/**/
+	x -5px;
+}

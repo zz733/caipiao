@@ -1,0 +1,96 @@
+*{
+	margin: 0 auto;
+	}
+	
+	#main{
+		padding-top: 10px;
+		width: 920px;
+		margin: 0 auto;
+	}
+	.d_tu{
+		position: relative;
+		width: 420px;
+				height: 500px;
+				float: left;
+	}
+			.zhutu{
+				width: 400px;
+				height: 350px;
+			}
+			#xiaotu{
+				margin-left: -60px;
+			}
+			#xiaotu li{
+				float: left;
+				list-style: none;
+				
+				margin-left: 25px;
+				margin-top: 10px;
+			}
+			#xiaotu img{
+				width: 80px;
+				height: 90px;
+			}
+			.d_word{
+				position: relative;
+				width: 500px;
+				height: 500px;
+				float: left;
+			}
+			.xiangqing{
+				position: relative;
+				width: 1000px;
+				height: 500px;
+				float: left;
+				border: 1px solid #c0c0c0;
+				/*background-color: red;*/
+			}
+			.t1{
+				height: 80px;
+			}
+			.jiage{
+				height: 50px;
+				background: #FFF2E8;
+				margin-top: 10px;
+				padding-top: 1px;
+			}
+			.j2{
+				width: auto;
+				height: 42px;
+				margin-top: 10px;
+			}
+			.world{
+				color: #6c6c6c;
+				font-weight: 500;
+				font-size: 15px;
+				padding-left: 20px;
+				margin-top: 10px;
+			}
+			.neirong{
+				padding-left: 20px;
+				margin-top: 10px;
+			}
+			.world2{
+				color: #6c6c6c;
+				font-weight: 5000;
+				font-size: 15px;
+				padding-left: 20px;
+				margin-top: 100px;
+			}
+			.neirong2{
+				padding-left: 200px;
+				margin-top: 100px;
+			}
+			.td-price{
+				font-size: 26px;
+    font-weight: 700;
+    color: #F40;	
+			}
+			.detail{
+				margin-top: 20px;
+			}
+			#buy{
+				margin-left: 150px;
+				margin-top: 30px;
+			}
+			

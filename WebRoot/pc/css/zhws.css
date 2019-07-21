@@ -1,0 +1,215 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#title {
+	margin: auto;
+	color: #B92734;
+}
+
+#head {
+	margin: auto;
+	text-align: center;
+	height: 34px;
+	line-height: 34px;
+	background-color: #f6f6f6;
+}
+
+#head span {
+	margin-right: 10px;
+	font-size: 15px;
+}
+
+
+/*---------走势图------------*/
+
+.table_zh{
+	margin: auto;
+	text-align: center;
+	font-size: 13px;
+	border-color: gray;
+	border-collapse: separate;
+}
+#yincang {
+	width:120px
+}
+
+.tdIssue{
+	       height: 25px; 
+           text-align: center;    /*设置水平居中*/
+           vertical-align: middle;    /*设置垂直居中*/
+}
+.table_zh thead{
+	background-color: #CFDFF3;
+
+}
+.table_zh th{
+	font-weight: 300;
+	border: 1px solid #fff;
+    text-align: center;    /*设置水平居中*/
+    vertical-align: middle;    /*设置垂直居中*/
+}
+.table_zh tbody{
+	background-color: #F7F0F0;
+}
+.table_zh .num {
+	width: 25px !important;
+}
+.table_zh .num_other {
+	width: 38px !important;
+}
+
+
+.table_zh td{
+    		border: 1px solid #fff;
+    		text-align: center;
+    	    vertical-align: middle;    /*设置垂直居中*/
+    	}
+
+
+
+
+
+/*---------模拟选号------------*/
+
+	.mn_xuanhou{
+	    margin:0 auto;
+		margin-top: -15px;
+		width: 618px;
+		/**
+		border: 1px solid red; 
+		*/
+		
+		
+		
+		}
+	
+	.table_td{
+	   margin-left: -100px;
+	}
+    	.wrap ul li {
+    		float: left;
+    		width: 23px;
+    		height: 23px;
+    	 	margin-left: 2px;
+    	    float: left;
+    		text-align: center;
+    		cursor: pointer;
+    		font-size: 12px;
+    		color: #F3F3F3;
+    		background: #EAEEEE;
+    		line-height: 24px; 
+    	
+    	}
+    	.konghang ul li {
+    		float: left;
+    		width: 23px;
+    		height: 23px;
+    	/*	margin-left: 5px;*/
+    		/*margin-bottom: 2.5px;*/
+    		float: left;
+    		text-align: center;
+    		font-size: 12px;
+    		background: #EAEEEE;
+    		line-height: 24px; 
+    		margin-right: 1px;
+    	}
+    
+    	.wrap ul li:last-child {
+    		margin-right: 0;
+    	}
+    	
+    	.wrap li.active {
+    		background: #800000;
+    		color: white;
+    	}
+    	
+    	#bt{margin-top:-10px;}
+    	.monixh {
+    		text-align: center;
+    		background-color: #EAEEEE;
+    		float: left;
+    		width: 118px;
+    		height: 23px;
+    		margin-left: 2px;
+    		margin-top: -4px;
+    		
+    	}
+    	
+    	.moni_xh{
+    	
+    		text-align: center;
+    		background-color: #EAEEEE;
+    		margin-left: 5px;
+    		font-weight: 400;
+    		line-height: 23px;
+    		float: left;
+            width: 118px;
+    		font-size: 14px;
+    	
+    	
+    	}
+      .table_td1 {
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    		white-space: nowrap;
+    		padding: 2px;
+    	    width: 120px;	
+    		
+    	}
+    .btn_zh{
+         float:right;
+    }	
+    	
+
+
+
+
+
+
+
+/*---------vip选号------------*/
+
+	#vipxh {
+    		background-color: #CFDFF3;
+    		border: 1px solid lightgray;
+    	}
+    	
+    	.vipxh_tx p {
+    		font-weight:600;
+    		font-size: 26px;
+    		margin-left: 30px;
+    		margin-top: 7px;
+    		color: red;
+    	}
+    	/*#xiaLa{margin: -41px 0px 0px 400px; }*/
+    	
+    	.left_index {
+    		float: left;
+    	}
+    	
+    	.opt {
+    		width: 30px;
+    		height: 29px;
+    		font-size: 13px;
+    		border: 1px solid darkgray;
+    		text-align: center;
+    		background-color: white;
+    		float: left;
+    		list-style: none;
+    		padding-top: 5px;
+    	}
+    	.jinyong{
+    	width:80%;position:absolute; z-index:100; background:#CDC9C9;filter: alpha(Opacity=70);-moz-opacity:0.2;opacity: 0.5;
+    	}
+    	
+    	.left_right{padding-left: 100px;}
+    	/*.left_right{margin: -50px 0px 0px 800px;}*/
+    	/*.left_right button{ 
+	    	        padding: 9px 10px 9px 10px;  
+	    	        -webkit-transition:all linear 0.30s;  
+				    -moz-transition:all linear 0.30s;  
+				    transition:all linear 0.30s;  
+				    }*/

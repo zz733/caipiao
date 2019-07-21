@@ -1,0 +1,81 @@
+#main{
+		width: 80%;
+		margin:0 auto;
+		background-color: white; 
+		
+	}
+	
+	#bon1{width: 200px;
+	      height: 40px;
+	      background-color: #dd514c;
+	      border-radius: 15px;
+	      font-size: 22px;
+	      font-family: "微软雅黑";
+	      text-align: center;
+	      color: white;
+	      padding-top:10px;
+	      margin-top: 10px;
+	     
+	}
+	
+	#yi{border: solid 1px gainsboro;
+	    margin: 0 auto;
+	    width: 1100px;
+	    height: 770px;
+	    margin-top: 20px;
+	    }
+   .d{
+   	width: 230px;height: 340px;
+      border: 1px solid darkgray;
+      margin-top: 30px;
+      margin-left: 35px;
+      float: left;
+      position: relative;
+      }
+     .d:hover{
+      	box-shadow:3px 3px 3px 5px gainsboro;
+      	}
+   .a{color: red;}	
+    
+    
+    /* 外加 */
+    .yi>div.d2{
+				position: relative;
+				padding: 0;
+				width: 230px;height: 340px;
+			}
+    
+   .d2 .mask{
+   width: 230px;height: 340px;
+  position: absolute;
+				top: 0;
+				left: 0;
+				background-color: rgba(0,0,0,0.7);
+				color: #f5f1e5;
+				line-height: 300px;
+				text-align: center;
+				border-radius: 4px;
+				display: none;
+   }
+  
+  
+  
+  /*立即购买按钮*/ 
+.btn{display:inline-block;width: 100px;height: 30px;font-size: 17px;border-radius: 5px;
+cursor:pointer;text-align:center; 
+font-weight:400;white-space:nowrap;
+vertical-align: middle;*zoom:1;
+-webkit-transition:background-color .1s linear;
+-moz-transition:background-color .1s linear;
+-o-transition:background-color .1s linear;
+transition:background-color .1s linear}
+
+.btn-danger{color:#fff;background-color:#dd514c; border-color:#dd514c}
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-danger:active,
+.btn-danger.active{color:#fff;background-color:#c62b26;border-color:#c62b26}    
+     
+       
+         
+    } 

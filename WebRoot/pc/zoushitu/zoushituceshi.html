@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>前三尾数</title>
+		<!--<link rel="stylesheet" href="../css/qsws.css" />-->
+		<script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
+	    <style>
+	    	#main{
+	margin: 0 auto;
+}
+
+#title{
+	width: 80%;
+	margin: auto;
+	color: #B92734;
+}
+#head{
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	height: 34px;
+	line-height: 34px;
+	background-color: #f6f6f6;
+}
+#head span{
+	margin-right: 10px;
+	font-size: 15px;
+}
+#tab{width: 80%;margin: auto;}
+.table{
+	width: 100%;
+	/*margin: auto;*/
+	text-align: center;
+	font-size: 13px;
+	border-color: gray;
+	border-collapse: separate;
+	border: 1px solid #fff;
+	/*margin-left: 200px;*/
+}
+.table .num{width: 5%;}
+.table thead{
+	background-color: #CFDFF3;
+	font-weight: 200;
+}
+.table th{
+	font-weight: 700;
+}
+.table tbody{
+	background-color: #F7F0F0;
+}
+.br{
+	width: 1px;
+    background: #dbdbdb;
+    font-size: 0;
+    border: 1px solid #dbdbdb;
+    border-width: 1px 0px 1px 0px;
+}
+.box_qiu{
+	background-position: center center; 
+	background-image: url(../images/blue.jpg);
+	width: 16px;
+	height: 15px;
+	position: relative;
+}
+.box_dx{
+	background: #99CC99;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+.box_jo{
+	background: #E0B26D;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+
+.box_green{
+	background: #339933;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+.box_blue{
+	background: #02AAE9;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+.box_red{
+	background: #FF6666;
+    color: #fff;
+    width: 16px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    font-family: arial;
+}
+/*#qishuUl{margin-left: 87px;margin-top: -54px;}*/
+.qs{list-style: none;font-size: 14px;
+			background-color: #F7F0F0;
+			padding-top: 5px;
+			border: 1px solid #FFFFFF;
+			width: 80px;height:19px; text-align: center;}
+.qh{list-style: none;font-size: 14px;border: 1px solid #FFFFFF;
+			width: 80px;height:25px; text-align: center;
+	        padding-top: 10px;
+	background-color: #CFDFF3;}
+.tdIssue{height: 23px;}
+#updown{width: 15px;height: 15px;margin-left: 15px;}
+#yincang{padding-left: 30px;}
+.tdFirst{background-color: #F1F1D6;}
+.tdSecond{background-color: #F1F1D6;}
+	    </style>
+	</head>
+ 
+	<body>
+		<div id="main">
+			<!-- 走势图  -->
+			<div id="top">
+				<!--<div id="head">-->
+					<!--<span id="headt">标注形式选择：</span>
+					<span><input type="checkbox"><label>带折线</label></span>
+					<span><input type="checkbox"><label>遗漏分层</label></span>-->
+				<!--</div>-->
+                <div id="tab">
+				<table class="table" cellspacing="1" id="qswsTu">
+					<thead>
+						<tr>
+							<th rowspan="2" id="yincang">期号<img src="../images/daohanglan/guanbi.png" id="updown"/></th>
+							<!--<th class="br" rowspan="2"></th>-->
+							<th colspan="33">红球走势</th>
+							<!--<th class="br" rowspan="2"></th>-->
+							<!--<th colspan="5">0-4尾数</th>-->
+						</tr>
+						<tr>
+							<th class="num">01</th>
+							<th class="num">02</th>
+							<th class="num">03</th>
+							<th class="num">04</th>
+							<th class="num">05</th>
+							<th class="num">06</th>
+							<th class="num">07</th>
+							<th class="num">08</th>
+							<th class="num">09</th>
+							<th class="num">10</th>
+							<th class="num">11</th>
+							<th class="num">12</th>
+							<th class="num">13</th>
+							<th class="num">15</th>
+							<th class="num">16</th>
+							<th class="num">17</th>
+							<th class="num">18</th>
+							<th class="num">19</th>
+							<th class="num">20</th>
+							<th class="num">21</th>
+							<th class="num">22</th>
+							<th class="num">23</th>
+							<th class="num">24</th>
+							<th class="num">25</th>
+							<th class="num">26</th>
+							<th class="num">27</th>
+							<th class="num">28</th>
+							<th class="num">29</th>
+							<th class="num">30</th>
+							<th class="num">31</th>
+							<th class="num">32</th>
+							<th class="num">33</th>
+							
+						</tr>
+					</thead>
+				</table>
+				</div>
+			</div>
+
+			<!-- 模拟选号 -->
+			<div id="middle"></div>
+
+			<!-- vip选号  -->
+			<div id="below"></div>
+
+		</div>
+
+	</body>
+
+<script type="text/javascript" src="js/jquery-1.8.1.min.js" ></script>
+<script>
+	//初始化数据
+	tableData = getTableData();
+    var $table = $("#qswsTu");
+
+function paddingData(){
+	for (var i = 0; i < tableData.length; i++) {
+		var $tr = $("<tr></tr>").toggleClass("trStyle");
+		$tr.css("background-color","#EAEEEE");  //底色
+		var trArr = tableData[i];
+		//数据
+		var tdArr = trArr[i];
+		//期号
+		var $td = $("<td></td>");
+		$td.toggleClass("tdIssue");
+		$td.text(tdArr[3]);
+		$tr.append($td);
+		var trArrIndex = 0;	
+		//0-9的尾数
+		for (var j = 0; j < 10; j++) {    //列数
+			var $td = $("<td></td>").toggleClass("tdFirst");
+			if(j!=parseInt(tdArr[trArrIndex])){
+				$td.text("  ");
+			}else{
+				$td.css("color","white");   //字体颜色
+				$td.text(tdArr[trArrIndex]);
+				$td.css("background-color","#CC3333");   //球的背景颜色
+				if(trArrIndex!=tdArr.length-2)trArrIndex++;
+			}
+			$tr.append($td);
+		}
+		trArrIndex = 0;	
+		//0-4的尾数
+		for (var j = 0; j < 5; j++) {    //列数
+			var $td = $("<td></td>").toggleClass("tdSecond");
+			if(j!=parseInt(tdArr[trArrIndex])){
+				$td.text("  ");
+			}else{
+//				alert(tdArr[trArrIndex]);
+				$td.css("color","white");   //字体颜色
+				$td.text(tdArr[trArrIndex]);
+				$td.css("background-color","#CC3333");   //球的背景颜色
+				if(trArrIndex!=tdArr.length-2)trArrIndex++;
+			}
+			$tr.append($td);
+		}
+		$table.append($tr);
+	  }
+}
+//获取数据
+function getTableData(){
+	var isTest = false;
+	var tableData = new Array(); //解析后的数据的二维数组,一维放一行的数据（[]）,二维放列的值
+	if(isTest){
+		//暂时模拟设置本地数据
+		for (var i = 0; i < 30; i++) {      //行数
+			var trArr =  new Array();
+			trArr[0] = issue;
+			for (var j = 0; j < 3; j++) {
+ 				trArr[j] = (randomNodumpDigital(trArr)+"").substring(1);
+			}
+			trArr.sort(function(a,b){return a-b});
+			
+			tableData[i] = trArr;
+		}
+	}else{
+				$.ajax("http://www.smartkey.xin:8083/two_color_ball_analysis/record?page=0&size=30",{
+     			type:'get',
+     			timeout:10000,
+     			success:function(data){
+     				for (var i = 0; i < data.numberOfElements; i++) {
+     					var trArr =  [];
+     					for (var j = 0; j < data.content.length; j++) {
+     						var tdArr =  [];
+     						tdArr[0] = data.content[j].issue; //期号
+     						var redBallArr = data.content[j].redBall.split("-"); //红球数组
+     						for (var k = 0; k < 3; k++) {
+     							tdArr[k+1] = redBallArr[k].substring(1); //第一个球
+     						}
+     						tdArr.sort(function(a,b){return a-b});
+     						trArr[j] = tdArr;
+     					}
+     					tableData[i] = trArr;
+//   					alert(trArr);/////
+     				}
+    				paddingData();
+     			},
+     			error:function(xhr,type,errorThrown){
+				//异常处理；
+			    alert("您好，请检查一下您的网络是否异常！")
+			}
+     	
+     	});
+     		
+
+	//TODO 
+	}
+	
+	 //返回二维数组结果
+	return tableData;
+}
+ 	
+/*生成随机数字*/	
+function randomNodumpDigital(trArr){
+	var r=Math.floor(Math.random()*(10))+1;
+	for (var i = 0; i < trArr.length; i++) {
+		if(trArr[i]==r){
+			return randomNodumpDigital(trArr);
+			break;
+		}
+	}
+	if(r<10)r = "0"+r;
+	return r;
+}
+
+	
+//隐藏和显示期数
+    $("#yincang").click(function(){
+    	var yincangF =$("#yincang");
+    	var yincangS = $(".tdIssue");
+    	
+    	if(yincangF.css("display")==="none"){
+    		yincangF.show();
+    		yincangS.show();
+    	}else{
+    		yincangF.hide();
+    		yincangS.hide();
+    	}
+    });
+	
+	
+	$(document).ready(function () {
+
+   $(".tdIssue").click(function () {
+
+       $(this).animate({
+
+           opacity: "hide"
+
+       }, "slow");
+
+   });
+
+
+});
+
+
+</script>
+<!--<script type="text/javascript" src="../js/qsws.js"></script>-->
+</html>

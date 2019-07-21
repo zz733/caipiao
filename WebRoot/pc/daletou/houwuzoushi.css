@@ -1,0 +1,141 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.xx{
+width:20px;
+heigth:20px;
+margin-left:-25px;
+margin-top:3px;
+color:white;
+}
+/*---------VIP閫夊彿------------*/
+#vipxh {
+	background-color: #CFDFF3;
+	border: 1px solid lightgray;
+	width:100%;
+}
+
+.vipxh_tx p {
+	font-weight: 600;
+	font-size: 26px;
+	margin-left: 75px;
+	margin-top: 7px;
+	color: red;
+}
+
+.left_index {
+	float: left;
+}
+
+.li_lf {
+	width: 30px;
+	height: 29px;
+	font-size: 13px;
+	border: 1px solid darkgray;
+	text-align: center;
+	background-color: white;
+	float: left;
+	list-style: none;
+	padding-top: 5px;
+}
+
+.jinyong {
+	width: 80%;
+	/* position: absolute; */
+	z-index: 100;
+	background: #CDC9C9;
+	filter: alpha(Opacity = 70);
+	-moz-opacity: 0.2;
+	opacity: 0.5;
+}
+.tdFirst{
+	width: 25px;
+	height: 25px;
+}
+.num {
+	width: 24px;
+	height: 24px;
+}
+.Selectbig{
+	height: 35px;
+	width:200px;
+	background-color: #A3C5E1;
+	border-radius:5px;
+	color: white;
+	border: none;	
+            /* margin-left: 20%;*/
+            border: none;
+            outline: none;
+            /*将默认的select选择框样式清除*/
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            -ms-appearance:none;
+}
+.Select{
+	margin-left: 310px;
+	margin-top: -47px;
+}
+.Selectbig2{
+	border: none;	
+	height: 35px;
+	padding: 0 20%;
+	background-color: #A3C5E1;
+	border-radius:5px;
+	color: white;
+}
+.Select2{
+	margin-left: 785px;
+	margin-top: -34px;
+}
+.Selectbig option{
+	text-align: center;
+	color: white;
+
+}
+select{
+ 
+border: solid 1px #000;
+appearance:none;
+-moz-appearance:none;
+-webkit-appearance:none;
+padding-right: 14px; 
+}
+  select::-ms-expand { display: none; }
+.c{
+	width:121px;
+}
+.btnleft{
+	/* width: 107px; */
+	height: 40px;
+	margin:-36px 0px 0px 580px;
+}
+
+.btnleft .btnnum{
+	float: left;
+	background-color: white;
+	border: 1px solid darkgray;
+}
+.numright{
+	/* width: 200px; */
+	height: 40px;
+	margin:-39px 56px 0px 340px;
+}
+.container .numright{
+	float: right;
+}
+.btnul2 .btnnum2{
+	border:1px solid;
+	margin: 0px;
+}
+.btnul2{
+	float: right;
+}
+.btnul,.btnulone,.btnultwo{
+	display: inline;
+}
+.left2{
+	float: left;
+}

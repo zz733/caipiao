@@ -1,0 +1,13 @@
+    body,div,dl,dt,dd,ul,ol,h1,h2,h3,h4,h5,h6,pre,
+    code,form,fieldset,legend,input,textarea,p,blockquote
+    ,th,td,hr,button,article,aside,details,figcaption,figure,
+    footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+	ins,a{text-decoration:none}
+	ul,ol {list-style:none;}
+	.wrapper02 {height: 1rem;width: 79%;margin-left: 136px;background:#1692DC}
+	.wrapper02 .scroller {position:absolute}
+	.wrapper02 .scroller li {width: 10%;height: 40px;color:#333;float: left;line-height: 40px;font-size: 13px;text-align: center;padding: 0;display: inline;display: table;}
+	.wrapper02 .scroller li a{color:#fff;margin:0 .362rem;}
+	.wrapper02 .scroller li.cur{background:#1682CA;}
+	.wrapper02 .scroller li.cur a{color:#fff;}
+		

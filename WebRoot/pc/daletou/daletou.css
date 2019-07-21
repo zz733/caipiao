@@ -1,0 +1,11 @@
+.table_hq{
+	width: 1200px;
+}
+.active,.active2,.active3,.active4,.active5{
+	background-color: #107310 !important;
+	font-weight: bold;
+	color: white !important;
+}
+.one{
+	color: #B6CBEE;
+}

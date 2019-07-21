@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+    <link rel="stylesheet" href="../css/base(2).css" />
+    <link rel="stylesheet" href="../css/base(1).css" />
+    <!--<link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/cp2y.css" />
+    <link rel="stylesheet" href="../css/f1.css" />
+    <link rel="stylesheet" href="../css/global2.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/klpk.css" />-->
+	<script type="text/javascript" src="../../admin/js/jquery-3.2.1.js" ></script>
+	<style>
+    	.trStyle{
+    		width: 20px;
+    		height: 20px;
+    	}
+    	#BallNum{
+    		
+            margin-top: 30px;
+margin-left: -65px;
+    	}
+    	#BallNum td{border: 1px solid red;}
+    </style>
+	</head>
+	<body>
+		<div id="chart_load" style="height: 800px; display: none;"></div>
+		<table  id="redColorTableBody" >
+		 </table>
+		 <div style="height: 50px;">
+		 </div>
+	</body>
+ <script>
+//初始化数据
+	tableData = getTableData();
+//	alert(tableData.toString());
+	var $table = $("#redColorTableBody");
+//	alert($table);
+	paddingData();
+
+function paddingData(){
+	for (var i = 0; i < tableData.length; i++) {
+		var $tr = $("<tr ></tr>");
+		$tr.css("background-color","lightgoldenrodyellow");  //底色
+		var trArr = tableData[i];
+		var trArrIndex = 0;
+		for (var j = 0; j < 34; j++) {
+			var $td = $("<td></td>").toggleClass("trStyle");
+			if(j!=trArr[trArrIndex]){
+				$td.text("  ");
+			}else{
+				$td.css("color","white");   //字体颜色
+				$td.text(trArr[trArrIndex]);
+				$td.css("background-color","coral");   //球的背景颜色
+				if(trArrIndex!=trArr.length-1)trArrIndex++;
+			}
+			$tr.append($td);
+		}
+		
+		$table.append($tr);
+	}
+}
+//获取数据
+function getTableData(){
+	var isTest = true;
+	var tableData = new Array();
+	if(isTest){
+		//暂时模拟设置本地数据
+		for (var i = 0; i < 30; i++) { //行数
+			var trArr =  new Array();
+			for (var j = 0; j < 6; j++) {
+ 				trArr[j] =  randomNodumpDigital(trArr);
+			}
+			trArr.sort(function(a,b){return a-b});
+			tableData[i] = trArr;
+		}
+	}else{
+			// 需要从服务器上获取数据代码
+	//TODO 
+	}
+	//返回二维数组结果
+	return tableData;
+}
+ 	
+/*生成随机数字*/	
+function randomNodumpDigital(trArr){
+	var r=Math.floor(Math.random()*(33))+1;
+	for (var i = 0; i < trArr.length; i++) {
+		if(trArr[i]==r){
+			return randomNodumpDigital(trArr);
+			break;
+		}
+	}
+	if(r<10)r = "0"+r;
+	return r;
+}
+
+ 	
+ </script>
+</html>
+

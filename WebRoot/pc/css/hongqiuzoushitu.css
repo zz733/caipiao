@@ -1,0 +1,282 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+#main{
+	margin: 0 auto;
+}
+#head{
+	margin: auto;
+	width: 80%;
+	text-align: center;
+	height: 34px;
+	background-color: #f6f6f6;
+}
+
+.table_hq{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	font-size: 13px;
+	border-color: gray;
+	border-collapse: separate;
+}
+.table_hq thead{
+	background-color: #CFDFF3;
+	font-weight: 200;
+}
+.table_hq th{
+	text-align: center;
+	font-weight: 300;
+}
+.table_hq td{
+	text-align: center;    /*璁剧疆姘村钩灞呬腑*/
+    vertical-align: middle;    /*璁剧疆鍨傜洿灞呬腑*/
+}
+#updown{width: 15px;height: 15px;margin-left: 5px;}
+#yincang {
+    		/*border: 1px solid red;*/
+    		width: 170px;
+    	}
+
+    	
+    	.qs {
+    		list-style: none;
+    		font-size: 14px;
+    		background-color: #F7F0F0;
+    		padding-top: 5px;
+    		border: 1px solid #FFFFFF;
+    		width: 80px;
+    		height: 19px;
+    		text-align: center;
+    	}
+    	
+    	.qh {
+    		list-style: none;
+    		font-size: 14px;
+    		border: 1px solid #FFFFFF;
+    		width: 80px;
+    		height: 25px;
+    		text-align: center;
+    		padding-top: 10px;
+    		background-color: #CFDFF3;
+    	}
+    	.tdIssue {
+    		height: 24px;
+    		padding-top: 4px;
+    	}
+    	.table_hq th{
+    		border: 1px solid #fff;
+    		font-weight: 300px;
+    		text-align: center;    /*璁剧疆姘村钩灞呬腑*/
+    		vertical-align: middle;    /*璁剧疆鍨傜洿灞呬腑*/
+    	}
+    	.table_hq td{
+    		border: 1px solid #fff;
+    		text-align: center;
+    		vertical-align: middle;    /*璁剧疆鍨傜洿灞呬腑*/
+    	}
+    	.tdFirst {
+    		background-color: #F1F1D6;
+    	}
+    	
+    	.tdSecond {
+    		background-color: #F1F1D6;
+    	}
+    	/*---------妯℃嫙閫夊彿------------*/
+    	
+    	.wrap {
+    		width: 100%;
+    	}
+    	
+    	.wrap ul{
+    		padding:0; 
+    		margin:0;
+            font-size:0px;
+            word-spacing:-4px;
+            display:table;
+    	}
+    	
+    	.wrap ul li {
+    		float: left;
+    		width: 24px;
+    		height: 24px;
+    		text-align: center;
+    		cursor: pointer;
+    		font-size: 12px;
+    		background: #F3F3F3;
+    		line-height: 24px; 
+    		min-height:24px;
+    		display:-moz-inline-stack;
+    		display:inline-block;
+            word-spacing:-4;
+            *display:inline;
+           
+           
+    	}
+    	
+    	
+    	#middle {
+    		width: 80%;
+    		margin: 0px auto;
+    		height: 150px;
+    	}
+    	
+    	.wrap ul li:last-child {
+    		margin-right: 0;
+    	}
+    	
+    	.wrap li.active {
+    		background: #AE0000 !important; 
+    		color: white  !important;
+    	}
+    	
+    	#mnxh {
+    		height: 30px;
+    	}
+    	#bt{margin-top: -9px;}
+    	.monixh {
+    	    background-color: #EAEEEE;
+    		margin-left: -1px;
+    		margin-bottom: -1px;
+    		width: 168px;
+    		height: 23px;
+    	}
+    	.moni_xh {
+    		margin-top: -10px;
+    		text-align: center;
+    		background-color: #EAEEEE;
+    		font-weight: 400;
+    		line-height: 23px;
+    		float: left;
+    		width: 100px;
+    		height:24px;
+    		margin-right: 1px;
+    		font-size: 14px;
+    		margin-left: 1px;
+    	}
+    	
+    	.konghang ul li {
+    		float: left;
+    		width: 24px;
+    		height: 24px;
+    	/*	margin-left: 5px;*/
+    		/*margin-bottom: 2.5px;*/
+    		float: left;
+    		text-align: center;
+    		font-size: 12px;
+    		background:#CCFFCC;
+    		line-height: 24px; 
+    		margin-right: 1px;
+    		margin-top: -9px;
+    	}
+    	.button_yi {
+
+    		float: right;
+            margin-left: 80%;
+            margin-top: 8px;
+    	}
+    	
+    	.table_td1 {
+    		text-overflow: ellipsis;
+    		overflow: hidden;
+    		white-space: nowrap;
+    		padding: 2px;
+    		width: 168px;
+    		
+    	}
+    	
+    	#xh {
+    		width: 100%;
+    		border: 1px solid #FFFFFF;
+    		list-style: none;
+    		font-weight: 600;
+    		line-height: 35px;
+    		margin: 0px auto;
+    		margin-top: 55px;
+    		text-align: center;
+    	}
+    	#ul li{
+    		margin-right: 1px;
+    	    margin-top: -10px;
+    		/*border: 1px solid lightgrey;*/
+    	} 
+    	#ul1 li{
+    		/*margin-right: 2px;*/
+    	    margin-top: -9px;
+    	    width: 28px;
+    	    float:left;
+    	    display:block;
+    	} 
+    	/*  .table_td button {
+    		text-align: center;
+    		padding: 0;
+    		width: 23px;
+    		height: 23px;
+    		
+    		margin-right: 1px;
+    	    margin-top: -3px;
+    		
+    	} */
+    	
+    	#ul li:hover {
+    		cursor: pointer;
+    	}
+    	
+    	#ul li:last-child {
+    		margin-right: 0px;
+    	}
+    	#table{
+    	   margin-top:-23px;
+    	  
+    	}
+    	/*---------vip閫夊彿------------*/
+    	
+    	#vipxh {
+    		background-color: #CFDFF3;
+    		height: 50px;
+    		border: 1px solid lightgray;
+    		
+    		
+    	}
+    	.jinyong{
+    	width:80%;position:absolute; z-index:100; background:#CDC9C9;filter: alpha(Opacity=70);-moz-opacity:0.2;opacity: 0.5;
+    	}
+    	
+    	.vipxh_tx p {
+    		font-weight:600;
+    		font-size: 26px;
+    		margin-left: 30px;
+    		margin-top: 7px;
+    		color: red;
+    	}
+    	#xiaLa{margin-top:9px;
+    	}
+    	/*#xiaLa{margin: -41px 0px 0px 400px; }*/
+    	
+    	.left_index {
+    		float: left;
+    	}
+    	
+    	.opt {
+    		width: 30px;
+    		height: 29px;
+    		font-size: 13px;
+    		border: 1px solid darkgray;
+    		text-align: center;
+    		background-color: white;
+    		float: left;
+    		list-style: none;
+    		padding-top: 5px;
+    	}
+    	.left_right{padding-left: 100px;}
+    	/*.left_right{margin: -50px 0px 0px 800px;}*/
+    	/*.left_right button{ 
+	    	        padding: 9px 10px 9px 10px;  
+	    	        -webkit-transition:all linear 0.30s;  
+				    -moz-transition:all linear 0.30s;  
+				    transition:all linear 0.30s;  
+				    }*/
