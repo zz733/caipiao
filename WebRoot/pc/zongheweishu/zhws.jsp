@@ -20,6 +20,26 @@
 	<script type="text/javascript" src="../js/zhws.js" ></script>
 	<body>
 		<style>
+		
+		.table_zh {
+	margin: auto;
+	text-align: center;
+	font-size: 13px;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 0px solid #FFF;
+}
+
+.table_zh>thead>tr>th {
+	border: 1px solid #FFF;
+}
+
+.table_zh>tbody>tr>td {
+	border: 1px solid #FFF;
+}
+		
+		
+		
 		.ul1 li:first-child{
 		margin-left:2px !important;
 		}

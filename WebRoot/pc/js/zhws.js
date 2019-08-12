@@ -153,8 +153,56 @@ function paddingData(tableData) {
 			}
 			$tr.append($td);
 		}
+		
+		
+		
 		$table.append($tr);
 	}
+	
+	//模拟选号
+			for(var k = 0; k < 3; k++) {
+				var $tr = $("<tr></tr>").toggleClass("trStyle");
+				$tr.css("background-color", "#EAEEEE"); //底色
+				var trArr = tableData[k];
+				//数据
+				var tdArr = trArr[k];
+				//期号
+				var $td = $("<td></td>");
+				$td.toggleClass("tdIssue");
+				if (k==0)
+				$td.text("模拟选号");
+				$tr.append($td)
+				var trArrIndex = 0;
+				var x = 0 ;
+				var y = 0 ;
+				var z = 0 ;
+				//红球
+				for(var j = 1; j < 26; j++) { //列数
+					var $td = $("<td></td>");
+					if(j != parseInt(tdArr[trArrIndex])) {
+						if(j<=15)
+							$td.css("background-color", "#EAEEEE").addClass("one").addClass("one1").css("color","#EAEEEE"); 
+						else
+							$td.css("background-color", "#C7E7E6").addClass("two").addClass("one1").css("color","#C7E7E6");
+						
+						$td.text("  ");
+					} else {
+						
+						$td.css("color", "white"); //字体颜色
+						if(j<=15)
+							$td.css("background-color", "#800000").addClass("one").addClass("one1").css("color","white"); 
+						else
+							$td.css("background-color", "#C7E7E6").addClass("two").addClass("one1").css("color","#EAC4CF");
+					
+						 //球的背景颜色
+						if(trArrIndex != tdArr.length- 1 ) trArrIndex++;
+					}
+					$tr.append($td);
+					$td.text(j)
+				}
+				
+				$table.append($tr);
+			}
 	drawLqzs()
 }
 
