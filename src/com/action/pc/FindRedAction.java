@@ -1,6 +1,7 @@
 package com.action.pc;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,9 @@ public class FindRedAction {
 
 	@RequestMapping(params = "p=getRed")
 	@ResponseBody
-	public String getRed() {
+	public String getRed(HttpServletResponse response) {
+		response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Cache-Control","no-cache"); 
 		String json = findRedService.getRedJson();
 		return json;
 
