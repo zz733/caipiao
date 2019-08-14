@@ -2,8 +2,8 @@
     <wb-module deploy-name="ShuangSeQiu">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="ShuangSeQiu"/>
         <property name="java-output-path" value="/ShuangSeQiu/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/caipiao"/>
         <property name="me-merge-utility-modules" value="true"/>
     </wb-module>
 </project-modules>
