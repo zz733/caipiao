@@ -18,6 +18,7 @@
 	<script type="text/javascript" src="../js/combineData.js" ></script>
 	<script type="text/javascript" src="../js/accordion-single.js" ></script>
 	<script type="text/javascript" src="../js/zhws.js" ></script>
+	<script src="../js/vue.min.js"></script>
 	<body>
 		<style>
 		
@@ -94,11 +95,43 @@ width:868px;
 	color:rgb(199, 231, 230) !important;
 }
 
+#table {
+				margin: auto;
+				text-align: center;
+				font-size: 13px;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border: 0px solid #FFF;
+			}
+			
+			#table>thead>tr>th {
+				border: 1px solid #FFF;
+			}
+			
+			#table td {
+				border: 1px solid #FFF;
+				height: 28px;
+			}
+			
+			.classGreen {
+				background-color: #B6FBBB;
+				color: #B6FBBB;
+			}
+			
+			.classRed {
+				background-color: #AE0000;
+				color: white;
+			}
+			
+			.classFenhong {
+				background-color: #EAC4CF;
+				color: #EAC4CF;
+			}
 		</style>
 		<div style="width: 80%; margin:  0 auto;">
 		<!--走势图-->
-		<div class="" style="padding: 5px; ">
-		<table class="table_zh" border="0" id="zhwsTu" cellspacing="1px">
+		<div class="" style="padding: 5px; "  id="app">
+		<table class="table_zh" id="table"border="0"  cellspacing="1px">
 					<thead>
 						<tr>
 							<th rowspan="2" id="yincang" style="font-weight: 900;">期号</th>
@@ -140,11 +173,59 @@ width:868px;
 						</tr>
 
 					</thead>
+					
+					<tbody id="t">
+					<tr style="color: white;background-color: #EAEEEE;" align="center" v-for="(row,index) in arry">
+
+						<td style="background-color:#F3F3F3;color: gray;" v-if="index2==0" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+
+                        <!-- 0--9和0-4 -->
+					    <td    @click="switchCheck(index,index2,$event)" :class="col!=' ' ? 'classRed':'classGreen'" v-if="index2>=1 && index2<=15" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+
+						<!--跨度-->
+						<td   :class="col>='0' && col<='9'?'classRed zhexian':'classFenhong'" v-if="index2>=16 && index2<=25" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+
+						<!-- 012路-->
+						<td  style="background-color: #FF9999;" v-if="index2==26" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+
+						<td style="background-color:#99CCCC ;" v-if="index2==27" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+
+						<td style="background-color:#CCFF66 ;" v-if="index2==28" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+						
+						
+
+					</tr>
+					
+					
+				</tbody>
+				
+				
+
+			</table>
+			
+			   <div class="btn btn-group btn_zh" style="margin-top: -50px;margin-right: 50px;">
+			        <button onclick="onLeft()"type="button" class="left btn btn-success btn-sm">◀</button>
+					<button onclick="onRight()" type="button" class="right btn btn-success btn-sm">▶</button>
+					<button onclick="_clear()" type="button" class="qingkong btn btn-danger btn-sm">清</button>
+	                      
+                </div>
 				</table>
 		</div>
 		
 		<!--模拟选号-->
-		<div class="mn_xuanhou">
+		<div class="mn_xuanhou" style="display: none;">
 	
 			<div class="wrap" style="padding-top: 10px;">
 
@@ -292,5 +373,346 @@ width:868px;
 	
 </script>
 
+
+<script>
+			
+			var _index = -1;
+			var app = new Vue({
+				el: '#app',
+				data: {
+					arry: [],
+					moni: []
+				},
+				methods:
+				  {
+				  	switchCheck:function(index,index2,obj)
+				  	{
+				  		var td = obj.target;
+				  		 _switchCheck(index,index2,td);
+				  	}
+				  }
+
+			});
+
+			var url = "http://leyle.vip/red.do?p=getRed";
+			var callback = function(result) {
+				//1.除了期数外，其他的取尾数 %10
+				var arry_old = eval(result); //原始数据
+				var arry_new = []; //新数组
+				for(var i in arry_old) {
+					var han_old = arry_old[i]; //旧的一行
+					var han_new = []; //新的一行
+					var han_new2 = [];
+					for(var j in han_old) {
+						if(j == 0) {
+
+							han_new.push(han_old[0]);
+						} else {
+							han_new.push(han_old[j] % 10);
+						}
+					}
+					//2.处理数组0-9
+					han_new2.push(han_new[0]); //期数
+					for(var k = 0; k < 10; k++) {
+						if(han_new.indexOf(k) > -1) {
+							han_new2.push(k);
+						} else {
+							han_new2.push(" ");
+						}
+					}
+					//3.处理0-4
+					for(var m = 0; m < 5; m++) {
+						han_new2.push(han_new2[m + 1]);
+					}
+					//4.跨度
+					var max = -1;
+					var min = 10;
+					var x = 0,
+						y = 0,
+						z = 0;
+					for(var n = 1; n <= 10; n++) {
+						if(max < han_new[n])
+							max = han_new[n];
+						if(min > han_new[n])
+							min = han_new[n];
+
+						if(han_new[n] % 3 == 0)
+							x++;
+						else if(han_new[n] % 3 == 1)
+							y++;
+						else if(han_new[n] % 3 == 2)
+							z++;
+
+					}
+					var kuadu = max - min;
+
+					for(var ii = 0; ii <= 9; ii++) {
+						if(ii == kuadu)
+							han_new2.push(ii)
+						else
+							han_new2.push(' ');
+					}
+
+					//0,1,2
+					han_new2.push(x);
+					han_new2.push(y);
+					han_new2.push(z);
+
+					arry_new.push(han_new2);
+
+				}
+				
+				//三行模拟选号
+				for (var k=0;k<3;k++)
+				{
+					var moni = [];
+					for (var j=0;j<26;j++)
+					{
+						if (k==0 && j==0)
+						{
+							moni.push("模拟选号");
+						}
+						else
+						{
+							moni.push(" ");
+						}
+					}
+					arry_new.push(moni);
+				}
+
+				//输出 
+				//display(arry_new);
+				app.arry = arry_new;
+                
+                //折线
+				setTimeout(function() {
+					drawLqzs();
+				}, 100);
+			}
+			$.get(url,callback);
+
+			//遍历
+			function display(arry) {
+				for(var i in arry) {
+					var han = arry[i];
+					var str = '';
+					for(var j in han) {
+						str = str + han[j] + " ";
+					}
+					console.log(str);
+				}
+
+			}
+		</script>
+	</body>
+
+</html>
+
+
+<script>
+	        /* ----------------------点击选中---------------------------*/
+	        function _switchCheck(index,index2,td)
+	        {
+	        	if ( app.arry[index][0]!="模拟选号")
+	        	{
+	        		return false;
+	        	}
+	        	
+	        	_index = index;
+	        	if (index2>0 && index2<=15)
+	        	{
+	        		
+	        		
+	        		
+	        		//$(td).toggleClass("classRed"); 
+				  		
+	        	    var value = app.arry[index][index2];
+	        	    var index3 = -1;
+	        	    if (index2>=1 && index2<=5)   //选 了前面0-4
+	        	    {
+	        	       index3 = index2 + 10;		
+	        	    }
+	        	    else if (1*index2>10 && 1*index2<=15) //选了后面0-4
+	        	    {
+	        	    	index3 = index2-10;
+	        	    	
+	        	    }
+	        	     
+	        	    if (value==' ')
+	        	    {
+	        	    	
+	        	    	//td.innerHTML = index2-1;
+	        	    	if (index2<=10)
+	        	    	{
+	        	    		
+		        	    	app.arry[index][index2] =index2-1+"";
+		        	    	if (index3!=-1)
+		        	    	{
+		        	    		app.arry[index][index3] =index2-1+"";
+		        	    		
+	        	    	    }
+	        	    	}
+	        	    	else
+	        	    	{
+	        	    		app.arry[index][index2] =index2%10-1+"";
+		        	    	if (index3!=-1)
+		        	    	{
+		        	    		app.arry[index][index3] =index2%10-1+"";
+		        	    		
+	        	    	    }
+	        	    	}
+	        	    	
+	        	    }
+	        	    else
+	        	    {
+	        	    	//td.innerHTML = ' ';
+	        	    	app.arry[index][index2] = ' ';
+	        	        if (index3!=-1)
+		        	    	    {
+		        	    		   app.arry[index][index3] =' ';
+		        	    		
+		        	    	    }
+	        	    	
+	        	    }
+	        	   
+	        	    app.$forceUpdate(); //强制更新
+	        	   
+	        	    
+	        	}
+	        	
+	        }
+	
+	        /* --------------------------- 折线       ---------------------*/
+			var table_canvas;
+			isInitOk = false;
+			y_head = -1;
+
+			function drawLqzs() {
+				//	table_canvas = new draw2d.Canvas("zhwsTu");
+				isInitOk = true;
+
+				// 得到圆的圆点X+圆点Y+圆半径 并画图
+				table_canvas = new draw2d.Canvas("t"); // if(!table_canvas)
+				$("svg").css("top", "45px");
+				$("svg").css("left", "0px"); // 由于自带样式中绝对定位有偏移
+				$("svg").css("width", "80%");
+				var tableHeight = $("#table")[0].offsetHeight - 24*3-60;
+				//	console.log("sdsds:"+tableHeight)
+
+				$("svg").css("height", tableHeight);
+				var lastPoints = new Array();
+				var linePositons = new Array();
+				var lastAngles = new Array();
+				$(".zhexian").each(
+					function(index, ele) {
+						var ceilWidth = $(this).width() / 2;
+						var ceilHeight = $(this).height() / 2;
+						var X = $(this).position().left + ceilWidth;
+						var Y = $(this).position().top + ceilHeight;
+						if(y_head == -1) {
+							y_head = $(this).position().top;
+							Y = Y - y_head;
+						} else {
+							Y = Y - y_head;
+						}
+						var lastPoint = lastPoints[index - 1];
+						if(lastPoint) {
+							var lastPointArr = lastPoint.split("-");
+							var preX = parseFloat(lastPointArr[0]);
+							var preY = parseFloat(lastPointArr[1]);
+							var lineX = X;
+							var lineY = Y;
+							var angle = (X - preX) / (Y - preY);
+							var lastAngle = lastAngles[index - 1];
+							lastAngles[index] = angle;
+							if(angle == 0) {
+								preY = preY + ceilHeight;
+								lineY -= ceilHeight;
+							} else if(angle > 0) { // 顺梯
+								if(Math.abs(lineX - preX) < (ceilWidth * 3)) { // 角对角
+									lineY = lineY - ceilHeight;
+									preX = preX + ceilWidth;
+								} else { // 分离
+									preX += ceilWidth;
+									lineX -= ceilWidth;
+								}
+							} else if(angle < 0) { // 逆梯
+								if(Math.abs(lineX - preX) < (ceilWidth * 3)) { // 角对角
+									lineY -= ceilHeight;
+									preX -= ceilWidth;
+								} else { // 分离
+									preX -= ceilWidth;
+									lineX += ceilWidth;
+								}
+							}
+							// alert(preX+"--"+preY+"--"+lineX+"--"+lineY);
+							table_canvas.addFigure(new draw2d.shape.basic.Line(preX,
+								preY, lineX, lineY, null));
+						}
+						lastPoints[index] = X + "-" + Y;
+					})
+			};
+			
+			//清空
+			function _clear()
+			{
+			  
+			    for (var i in app.arry[_index])
+			    {
+			    	if (i==0) continue;
+			    	app.arry[_index][i] = ' ';
+			    	
+			    }
+			    
+				app.$forceUpdate();
+			}
+			
+			//左移  1,2,3,4
+			function onLeft()
+			{
+				if (_index==-1) return false;
+				 var arry = ['模拟选号'];
+				 for (var i=2;i<16;i++)
+			    {
+			    	
+			    	
+			    	arry.push(app.arry[_index][i]);
+			    }
+			    
+			    arry.push(app.arry[_index][1]);
+			    
+			    for (var i=0;i<10;i++)
+			    {
+			      arry.push(' ');
+			    }
+			    app.arry[_index] = arry;
+				app.$forceUpdate();
+				
+			}
+			
+			//右移
+			function onRight()
+			{
+				if (_index==-1) return false;
+				 var arry =['模拟选号'];
+				 arry.push(app.arry[_index][15]);;
+				 for (var i=1;i<15;i++)
+			    {
+			    	
+			    	
+			    	arry.push(app.arry[_index][i]);
+			    }
+			    
+			   
+			    
+			    for (var i=0;i<10;i++)
+			    {
+			      arry.push(' ');
+			    }
+			    app.arry[_index] = arry;
+				app.$forceUpdate();
+			}
+			
+		</script>
 	
 </html>

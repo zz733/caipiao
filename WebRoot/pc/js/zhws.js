@@ -188,17 +188,12 @@ function paddingData(tableData) {
 						$td.text("  ");
 					} else {
 						
-						$td.css("color", "white"); //字体颜色
-						if(j<=15)
-							$td.css("background-color", "#800000").addClass("one").addClass("one1").css("color","white"); 
-						else
-							$td.css("background-color", "#C7E7E6").addClass("two").addClass("one1").css("color","#EAC4CF");
-					
+						
 						 //球的背景颜色
 						if(trArrIndex != tdArr.length- 1 ) trArrIndex++;
 					}
 					$tr.append($td);
-					$td.text(j)
+					//$td.text(j)
 				}
 				
 				$table.append($tr);
