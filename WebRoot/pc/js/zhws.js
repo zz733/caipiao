@@ -935,19 +935,4 @@ window.setTimeout(function(){
 	$("#ul>li").removeClass("active");
 	
 },200);
-//VIP号 显示在模拟区
-function showVIP(param,n)
-{         
-	var array=[0,1,2,3,4];
-	console.log(param);//按钮格子当中的值
-	$("#ul li").removeClass("active");//原来选中的红色格子
-	for (var i=0;i<param.length;i++)
-	{
-		$("#ul li").eq(param[i]).addClass("active");
-		if (param[i]<=4)
-		{
-			console.log("输出"+param[i])
-			$("#ul .one").eq(param[i]).addClass("active");
-		}
-	}
-}
+
