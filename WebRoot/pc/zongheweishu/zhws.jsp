@@ -464,6 +464,7 @@ width:868px;
 				}
 				
 				//三行模拟选号
+				
 				for (var k=0;k<3;k++)
 				{
 					var moni = [];
@@ -484,6 +485,8 @@ width:868px;
 				//输出 
 				//display(arry_new);
 				app.arry = arry_new;
+				
+				_index = arry_old.length;
                 
                 //折线
 				setTimeout(function() {
@@ -718,14 +721,28 @@ width:868px;
 //VIP号 显示在模拟区
 function showVIP(param,n)
 {         
+   if (_index==-1)
+   {
+     return false;
+   }
+   
 	//$("#ul li").removeClass("active");//原来选中的红色格子
 	_clear();
 	var array = ['模拟选号'];
-	for (var j=0;j<16;j++)
+	for (var j=0;j<15;j++)
    {
+        var f = false;
 		for (var i=0;i<param.length;i++)
 		{
 			if (param[i]==j)
+			{
+				f = true;
+				break;	
+			}
+			
+			
+		}
+		if (f)
 			{
 				array.push(j+"");	
 			}
@@ -733,16 +750,16 @@ function showVIP(param,n)
 			{
 				array.push(' ');	
 			}
-			
-		}
    }
    for (var k=0;k<10;k++)
 	{
 	   array.push(' ');	
 	}
   
-   app.arry[_index] = array;
-   app.$forceUpdate();
+     
+      app.arry[_index] = array;
+	  app.$forceUpdate();
+	  
 }
 		</script>
 	
