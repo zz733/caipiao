@@ -395,7 +395,7 @@ width:868px;
 
 			});
 
-			var url = "http://leyle.vip/red.do?p=getRed";
+			var url = "${pageContext.request.contextPath}/red.do?p=getRed";
 			var callback = function(result) {
 				//1.除了期数外，其他的取尾数 %10
 				var arry_old = eval(result); //原始数据
@@ -491,7 +491,7 @@ width:868px;
                 //折线
 				setTimeout(function() {
 					drawLqzs();
-				}, 100);
+				}, 10);
 			}
 			$.get(url,callback);
 
