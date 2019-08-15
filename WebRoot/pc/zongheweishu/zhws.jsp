@@ -17,8 +17,9 @@
     <script type="text/javascript" src="../js/jquery.easydropdown.js" ></script>
 	<script type="text/javascript" src="../js/combineData.js" ></script>
 	<script type="text/javascript" src="../js/accordion-single.js" ></script>
-	<script type="text/javascript" src="../js/zhws.js" ></script>
+	
 	<script src="../js/vue.min.js"></script>
+	<script type="text/javascript" src="../js/zhws.js" ></script>
 	<body>
 		<style>
 		
@@ -713,6 +714,36 @@ width:868px;
 				app.$forceUpdate();
 			}
 			
+			
+//VIP号 显示在模拟区
+function showVIP(param,n)
+{         
+	//$("#ul li").removeClass("active");//原来选中的红色格子
+	_clear();
+	var array = ['模拟选号'];
+	for (var j=0;j<16;j++)
+   {
+		for (var i=0;i<param.length;i++)
+		{
+			if (param[i]==j)
+			{
+				array.push(j+"");	
+			}
+			else
+			{
+				array.push(' ');	
+			}
+			
+		}
+   }
+   for (var k=0;k<10;k++)
+	{
+	   array.push(' ');	
+	}
+  
+   app.arry[_index] = array;
+   app.$forceUpdate();
+}
 		</script>
 	
 </html>
