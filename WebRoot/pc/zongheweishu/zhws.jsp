@@ -183,7 +183,7 @@ width:868px;
 						</td>
 
                         <!-- 0--9和0-4 -->
-					    <td    @click="switchCheck(index,index2,$event)" :class="col!=' ' ? 'classRed':'classGreen'" v-if="index2>=1 && index2<=15" v-for="(col,index2) in arry[index]">
+					    <td    @click="switchCheck(index,index2,$event)" :class="col!==' ' ? 'classRed':'classGreen'" v-if="index2>=1 && index2<=15" v-for="(col,index2) in arry[index]">
 							{{col}}
 						</td>
 
@@ -676,14 +676,34 @@ width:868px;
 			{
 				if (_index==-1) return false;
 				 var arry = ['模拟选号'];
-				 for (var i=2;i<16;i++)
+				 for (var i=2;i<=10;i++)
 			    {
+			    	if (app.arry[_index][i]!==' ')
+					{
+                        arry.push(app.arry[_index][i]-1);
+					}
+					else
+					{
+                        arry.push(' ');
+					}
 			    	
 			    	
-			    	arry.push(app.arry[_index][i]);
 			    }
+			    if (app.arry[_index][1]!==' ')
+			    {
+					arry.push(9);
+			    }
+				else
+				{
+					arry.push(' ');
+				}
+
+				for (i=1;i<=5 ;i++ )
+				{
+					arry.push(arry[i]);
+				}
+
 			    
-			    arry.push(app.arry[_index][1]);
 			    
 			    for (var i=0;i<10;i++)
 			    {
@@ -699,12 +719,35 @@ width:868px;
 			{
 				if (_index==-1) return false;
 				 var arry =['模拟选号'];
-				 arry.push(app.arry[_index][15]);;
+
+				 if (app.arry[_index][15]!==' ')
+				 {
+					 arry.push(0);
+				 }
+				 else
+				 {
+					 arry.push(' ');
+				 }
+				 
 				 for (var i=1;i<15;i++)
 			    {
 			    	
+			    	if (app.arry[_index][i]!==' ')
+					{
+						if (1*app.arry[_index][i]+1>=10)
+						{
+                           arry.push(0);
+						}
+						else
+						{					     
+						   arry.push(1*app.arry[_index][i]+1);
+						}
+					}
+					else
+					{
+						arry.push(' ');
+					}
 			    	
-			    	arry.push(app.arry[_index][i]);
 			    }
 			    
 			   
