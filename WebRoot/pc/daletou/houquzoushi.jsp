@@ -43,57 +43,10 @@
 				border: 1px solid #FFF;
 				height: 28px;
 			}
+			
+			
 </style>
 
-	<div id="main"  style="width: 80%; margin:  0 auto;">
-		<!-- 走势图  -->
-		<div id="top">
-			<div id="head" >
-			
-			</div>
-			<table id="lqzsTu" class="table_lq" border="0" cellspacing="1px">
-				<thead>
-					<tr>
-						<td rowspan="2" width="65px" style="font-weight: 900;"
-							id="yincang">期号</td>
-						<th colspan="12">后区走势</th>
-						<th width="20px" style="background-color:#FFFFFF;"></th>
-						<th colspan="10">和尾</th>
-					</tr>
-					<tr>
-						<th class="num">01</th>
-						<th class="num">02</th>
-						<th class="num">03</th>
-						<th class="num">04</th>
-						<th class="num">05</th>
-						<th class="num">06</th>
-						<th class="num">07</th>
-						<th class="num">08</th>
-						<th class="num">09</th>
-						<th class="num">10</th>
-						<th class="num">11</th>
-						<th class="num">12</th>
-						<th class="num" style="background-color:#FFFFFF;"></th>
-						<th class="numqt">0</th>
-						<th class="numqt">1</th>
-						<th class="numqt">2</th>
-						<th class="numqt">3</th>
-						<th class="numqt">4</th>
-						<th class="numqt">5</th>
-						<th class="numqt">6</th>
-						<th class="numqt">7</th>
-						<th class="numqt">8</th>
-						<th class="numqt">9</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-			<div>
-				<div id="vipxh" style="margin-top:60px;height:50px;background-color: #CFDFF3;">
-					<div class="vipxh_tx">
-						<p>VIP选号区</p>
-					</div>
 					<!--自选框-->
 					<style>
 .vipxh_tx {
@@ -186,29 +139,87 @@ border:1px solid #D4D4D4;
 	background-color:#FFFFFF;
 }
 </style>
-					<div class="wrapper">
-						<div class="input-group input_group" onload="vip_zx()">
-						</div>
-					</div>
-				<div class="btn btn-group btn_lq" style="margin-top: -140px;margin-left: 684px;">
+
+	<div id="main"  style="width: 80%; margin:  0 auto;">
+		<!-- 走势图  -->
+		<div id="top">
+			<div id="head" >
+			
+			</div>
+			<table id="lqzsTu" class="table_lq" border="0" cellspacing="1px">
+				<thead>
+					<tr>
+						<td rowspan="2" width="65px" style="font-weight: 900;"
+							id="yincang">期号</td>
+						<th colspan="12">后区走势</th>
+						<th width="20px" style="background-color:#FFFFFF;"></th>
+						<th colspan="10">和尾</th>
+					</tr>
+					<tr>
+						<th class="num">01</th>
+						<th class="num">02</th>
+						<th class="num">03</th>
+						<th class="num">04</th>
+						<th class="num">05</th>
+						<th class="num">06</th>
+						<th class="num">07</th>
+						<th class="num">08</th>
+						<th class="num">09</th>
+						<th class="num">10</th>
+						<th class="num">11</th>
+						<th class="num">12</th>
+						<th class="num" style="background-color:#FFFFFF;"></th>
+						<th class="numqt">0</th>
+						<th class="numqt">1</th>
+						<th class="numqt">2</th>
+						<th class="numqt">3</th>
+						<th class="numqt">4</th>
+						<th class="numqt">5</th>
+						<th class="numqt">6</th>
+						<th class="numqt">7</th>
+						<th class="numqt">8</th>
+						<th class="numqt">9</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				
+			</table>
+			
+			<div class="btn btn-group btn_lq" style="margin-top: -120px;margin-left: 684px;">
 					 <button type="button" class="left btn btn-success btn-sm">◀</button>
 					<button type="button" class="right btn btn-success btn-sm">▶</button>
 					<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
-				</div>
-				<div class="btnleft">
-						<button type="button" class="btn btn-primary left2">◀</button>
-						<ul class="btnul" id="btnul">
-						</ul>
-						<button type="button"  class="btn btn-primary right2">▶</button>
+		    </div>
+				
+				
+			<div>
+				<div id="vipxh" style="height:50px;background-color: #CFDFF3;">
+					<div class="vipxh_tx">
+						<p>VIP选号区</p>
 					</div>
-					<div class="numright">
-						<ul class="btnul2" id="btnul2">
-						</ul>
-					</div> 
 					
-					<div style="height: 150px;">
-		        </div>
+					<div class="wrapper">
+							<div class="input-group input_group" onload="vip_zx()">
+							</div>
+					</div>
+				
+					    <div class="btnleft" style="margin-top: -5px">
+							<button type="button" class="btn btn-primary left2">◀</button>
+							<ul class="btnul" id="btnul">
+							</ul>
+							<button type="button"  class="btn btn-primary right2">▶</button>
+						</div>
+						<div class="numright" style="margin-top: -5px">
+							<ul class="btnul2" id="btnul2">
+							</ul>
+						</div> 
+						
+						
+			     </div>
 		</div>
+		
+		<div style="height: 150px;"/>
 </body>
 <script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="../js/jquery.actual.js"></script>
