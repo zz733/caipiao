@@ -379,10 +379,20 @@ function xuanN(num) {
 				chooseIndexs.push(mnxh.indexOf(dataArr[j]));
 				//console.info(chooseIndexs);
 			}
+			
+	    }
+	else
+		{
+		   for (var ii=0;ii<15;ii++)
+			   {
+			     arry.push(' ');
+			   }
+		
+		}
 	   
 		app.arry[_index] = arry;
 		app.$forceUpdate();
-	}
+	
 
 	var $left_index = $(".left_index");
 	var $right_index = $(".right_index");
