@@ -306,73 +306,7 @@ width:868px;
 	</div>
 	</body>
 	
-	   <script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
-	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/layer/2.4/layer.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/static/h-ui/js/H-ui.min.js"></script> 
-	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
-	<!--/_footer 作为公共模版分离出去-->
-<script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.actual.js"></script>
-<script type="text/javascript" src="../js/raphael/v2.1.0/raphael.js"></script>
-<script type="text/javascript"
-	src="../js/draw2d/jquery-ui-1.8.23.custom.min.js"></script>
-	
-<script type="text/javascript" src="../js/draw2d/Class.js"></script>
-<script type="text/javascript" src="../js/draw2d/draw2d.js"></script>
-	<!--请在下方写此页面业务相关的脚本-->
-	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>  
-	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/laypage/1.2/laypage.js"></script>
-	<script type="text/javascript">
 
-	$(function(){
-		 //  vip_mokuai = $("#vipxh").addClass("jinyong");
-		  if (${sessionScope.userinfo.usersType!=1})
-	     {  vip_mokuai = $("#vipxh").addClass("jinyong");} 
-		
-	    $("#vipxh").click( function(){
-	       //  if('${sessionScope.userinfo.usersType}'!=1){
-	       //    vipchongzhi('会员充值','${pageContext.request.contextPath}/chongzhi.do?p=vipchongzhi','765','490');     
-	       // }else{
-	       //    vip_mokuai = $("#vipxh").removeClass("jinyong");
-	  //
-	        //    $("select").attr("disabled",false);
-	       //     $(".l_f").attr("disabled",false);
-	        //    $(".btt").attr("disabled",false);  
-	        //}
-	         
-	         $.ajax({
-	 			url:"${pageContext.request.contextPath}/userinfo.do?p=panduan",
-	 			type:"post",
-			    sdata:{x:Math.random()},
-	 			
-	 			success:function(data){
-	 				if(data=="vip"){
-	 					 vip_mokuai = $("#vipxh").removeClass("jinyong");
-	 				     $("select").attr("disabled",false);
-	 				     $(".l_f").attr("disabled",false);
-	 				     $(".btt").attr("disabled",false); 
-	 				}
-	 				else if(data=="novip"){
-	 					vipchongzhi('会员充值','${pageContext.request.contextPath}/chongzhi.do?p=vipchongzhi','765','490');     
-	 				}
-	 				else{
-	 					vipchongzhi('会员登录','${pageContext.request.contextPath}/pc/yonghudenglu/denglu_sm.jsp','765','490');
-	 				}
-	 			  
-	 			},
-	 			error:function(data,status,e){
-	 				alert(e);
-	 			}
-	 		});
-	    });
-	
-	});
-	function vipchongzhi(title,url,w,h){
-		layer_show(title,url,w,h);
-	}
-	
-</script>
 
 
 <script>
@@ -814,5 +748,74 @@ function showVIP(param,n)
 	  
 }
 		</script>
+		
+		
+			   <script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/jquery/1.9.1/jquery.min.js"></script> 
+	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/layer/2.4/layer.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/static/h-ui/js/H-ui.min.js"></script> 
+	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
+	<!--/_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery.actual.js"></script>
+<script type="text/javascript" src="../js/raphael/v2.1.0/raphael.js"></script>
+<script type="text/javascript"
+	src="../js/draw2d/jquery-ui-1.8.23.custom.min.js"></script>
+	
+<script type="text/javascript" src="../js/draw2d/Class.js"></script>
+<script type="text/javascript" src="../js/draw2d/draw2d.js"></script>
+	<!--请在下方写此页面业务相关的脚本-->
+	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>  
+	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/laypage/1.2/laypage.js"></script>
+	<script type="text/javascript">
+
+	$(function(){
+		 //  vip_mokuai = $("#vipxh").addClass("jinyong");
+		  if (${sessionScope.userinfo.usersType!=1})
+	     {  vip_mokuai = $("#vipxh").addClass("jinyong");} 
+		
+	    $("#vipxh").click( function(){
+	       //  if('${sessionScope.userinfo.usersType}'!=1){
+	       //    vipchongzhi('会员充值','${pageContext.request.contextPath}/chongzhi.do?p=vipchongzhi','765','490');     
+	       // }else{
+	       //    vip_mokuai = $("#vipxh").removeClass("jinyong");
+	  //
+	        //    $("select").attr("disabled",false);
+	       //     $(".l_f").attr("disabled",false);
+	        //    $(".btt").attr("disabled",false);  
+	        //}
+	         
+	         $.ajax({
+	 			url:"${pageContext.request.contextPath}/userinfo.do?p=panduan",
+	 			type:"post",
+			    sdata:{x:Math.random()},
+	 			
+	 			success:function(data){
+	 				if(data=="vip"){
+	 					 vip_mokuai = $("#vipxh").removeClass("jinyong");
+	 				     $("select").attr("disabled",false);
+	 				     $(".l_f").attr("disabled",false);
+	 				     $(".btt").attr("disabled",false); 
+	 				}
+	 				else if(data=="novip"){
+	 					vipchongzhi('会员充值','${pageContext.request.contextPath}/chongzhi.do?p=vipchongzhi','765','490');     
+	 				}
+	 				else{
+	 					vipchongzhi('会员登录','${pageContext.request.contextPath}/pc/yonghudenglu/denglu_sm.jsp','765','490');
+	 				}
+	 			  
+	 			},
+	 			error:function(data,status,e){
+	 				alert(e);
+	 			}
+	 		});
+	    });
+	
+	});
+	function vipchongzhi(title,url,w,h){
+		layer_show(title,url,w,h);
+	}
+	
+</script>
 	
 </html>
