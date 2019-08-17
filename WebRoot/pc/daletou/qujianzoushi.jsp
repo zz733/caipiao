@@ -17,6 +17,7 @@
 <script type="text/javascript" src="../js/layer/layer.js"></script>
 <script type="text/javascript" src="../js/accordion-single.js"></script>
 <script type="text/javascript" src="qujianzoushi.js"></script>
+<script src="../js/vue.min.js"></script>
 <body>
 	<style>
 .active {
@@ -49,13 +50,47 @@ font-size:13px;
 	/*margin-left: 28px;*/
 }
 </style>
+
+
+<style type="text/css">
+           #qswsTu {
+				margin: auto;
+				text-align: center;
+				font-size: 13px;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border: 0px solid #FFF;
+			}
+			
+			#qswsTu>thead>tr>th {
+				border: 1px solid #FFF;
+			}
+			
+			#qswsTu td {
+				border: 1px solid #FFF;
+				height: 28px;
+			}
+			
+			.classGreen {
+				background-color: #F1F1D6;
+				color: #F1F1D6;
+			}
+			
+			.classRed {
+				background-color: #AE0000;
+				color: white;
+			}
+			
+</style>
+
+
 	<div style="width: 80%; margin: 0 auto;">
 		<!--
             	作者：280191146@qq.com
             	时间：2017-12-02
             	描述：走势图区
             -->
-		<div class="" style="padding: 5px; width: 100%;">
+		<div class="" style="padding: 5px; width: 100%;" id="app">
 
 			<table class="tabl" border="0" id="qswsTu">
 				<thead>
@@ -76,114 +111,229 @@ font-size:13px;
 						<th class="num">c</th>
 						<th class="num">d</th>
 					</tr>
+					
+					
+					<tr style="color: white;background-color: #EAEEEE;" align="center" v-for="(row,index) in arry">
+					   <td style="background-color:#F3F3F3;color: gray;" v-if="index2==0" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+					
+					    <!-- a--g和a-d -->
+					    <td  v-if="index2>0"  @click="switchCheck(index,index2)" :class="col!==' ' ? 'classRed':'classGreen'"  v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+					</tr>
 
 				</thead>
 			</table>
-			<!--模拟选号  -->
-			<!--  <div class="btn btn-group btn_qs" style="margin-top: -57px;margin-left: 820px;">
-					<button type="button" class="left btn btn-success btn-sm">◀</button>
-					<button type="button" class="right btn btn-success btn-sm">▶</button>
-					<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
-			        </div> -->
+			
+			 <div class="btn btn-group btn_qs" style="margin-top: -57px;margin-left: 820px;">
+					<button type="button" onclick="onLeft()" class="left btn btn-success btn-sm">◀</button>
+					<button type="button" onclick="onRight()" class="right btn btn-success btn-sm">▶</button>
+					<button type="button" onclick="_clear()" class="qingkong btn btn-danger btn-sm">清</button>
+			 </div> 
 
 
-			<!--模拟选号-->
-			<div class="mn_xuanhou" style="width: 395px;">
-				<div class="wrap" style="padding-top: 10px;">
-					<div class="moni_xh2" style="background-color:#F1F1D6;">模拟选号</div>
-					<ul id="ul" style="height: 25px;">
-					</ul>
-				</div>
-
-				<!-- 模拟选号两行 -->
-				<div class="konghang" style="padding-top: 10px;margin-top: -21px;">
-					<div class="moni_xh2" style="color:#EAEEEE; background-color:#F1F1D6;">空行</div>
-					<ul class="ul1" style="height: 25px;">
-					</ul>
-				</div>
-				<div class="konghang" style="padding-top: 10px;margin-top:-21px;">
-					<div class="moni_xh2" style="color:#EAEEEE; background-color:#F1F1D6;"">空行</div>
-					<ul class="ul1" style="height: 25px;">
-					</ul>
-				</div>
-
-				<div class="btn btn-group btn_zh" style="margin-top: -80px;margin-left: 420px;width: 200px;">
-					<button type="button" class="left btn btn-success btn-sm">◀</button>
-					<button type="button" class="right btn btn-success btn-sm">▶</button>
-					<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
-				</div>
 				
 				
-			</div>
 		</div>
 		
 		<div style="height: 150px;">
 		    </div>
 	</div>
 </body>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/admin/lib/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/admin/static/h-ui/js/H-ui.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/admin/static/h-ui.admin/js/H-ui.admin.js"></script>
-<!--/_footer 作为公共模版分离出去-->
 
-<!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath }/admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-	$(function() {
-		//  vip_mokuai = $("#vipxh").addClass("jinyong");
-		if (${sessionScope.userinfo.usersType!=1}) {
-			vip_mokuai = $("#vipxh").addClass("jinyong");
-		}
 
-		$("#vipxh").click(function() {
-			// if('${sessionScope.userinfo.usersType}'!=1){
-			//   vipchongzhi('会员充值','${pageContext.request.contextPath}/chongzhi.do?p=vipchongzhi','765','490');     
-			//}else{
-			//   vip_mokuai = $("#vipxh").removeClass("jinyong");
-			//    $(".l_f").attr("disabled",false);
-			//    $(".btt").attr("disabled",false);  
-			// }
+          var _index = -1;
+			var app = new Vue({
+				el: '#app',
+				data: {
+					arry: [],
+					moni: []
+				},
+				methods:
+				  {
+				  	switchCheck:function(index,index2)
+				  	{
+				  		 _switchCheck(index,index2);
+				  	}
+				  }
 
-			/*       
-			      $.ajax({
-					url:"${pageContext.request.contextPath}/userinfo.do?p=panduan",
-					type:"post",
-					data:{x:Math.random()},
-					success:function(data){
-						if(data=="vip"){
-							 vip_mokuai = $("#vipxh").removeClass("jinyong");
-						    
-						     $(".l_f").attr("disabled",false);
-						     $(".btt").attr("disabled",false); 
-						}
-						else if(data=="novip"){
-							vipchongzhi('会员充值','${pageContext.request.contextPath}/chongzhi.do?p=vipchongzhi','765','490');     
-						}
-						else{
-							vipchongzhi('会员登录','${pageContext.request.contextPath}/pc/yonghudenglu/denglu_sm.jsp','765','490');
-						}
-					  
-					},
-					error:function(data,status,e){
-						alert(e);
+			});
+			
+			
+			 /* ----------------------点击选中---------------------------*/
+	        function _switchCheck(index,index2)
+	        {
+	            var arry = ['a','b','c','d','e','f','g'];
+	        	if ( app.arry[index][0]!="模拟选号")
+	        	{
+	        		return false;
+	        	}
+	        	
+	        	if (index2>0)
+	        	{
+	        	    var value = app.arry[index][index2];
+	        	    var index3 = -1;
+	        	    if (index2>=1 && index2<=4)   //选 了前面0-4
+	        	    {
+	        	       index3 = index2 + 7;		
+	        	    }
+	        	    else if (1*index2>=8) //选了后面0-4
+	        	    {
+	        	    	index3 = index2-7;
+	        	    	
+	        	    }
+	        	     
+	        	    if (value==' ')
+	        	    {
+	        	    	
+	        	    	//td.innerHTML = index2-1;
+	        	    	if (index2<=7)
+	        	    	{
+	        	    		
+		        	    	app.arry[index][index2] =arry[index2-1];
+		        	    	if (index3!=-1)
+		        	    	{
+		        	    		app.arry[index][index3] =arry[index2-1];
+		        	    		
+	        	    	    }
+	        	    	}
+	        	    	else
+	        	    	{
+	        	    		app.arry[index][index2] =arry[index2-1-7];
+		        	    	if (index3!=-1)
+		        	    	{
+		        	    		app.arry[index][index3] =arry[index2-1-7];
+		        	    		
+	        	    	    }
+	        	    	}
+	        	    	
+	        	    }
+	        	    else
+	        	    {
+	        	    	//td.innerHTML = ' ';
+	        	    	app.arry[index][index2] = ' ';
+	        	        if (index3!=-1)
+		        	    	    {
+		        	    		   app.arry[index][index3] =' ';
+		        	    		
+		        	    	    }
+	        	    	
+	        	    }
+	        	   
+	        	    app.$forceUpdate(); //强制更新
+	        	   
+	        	    
+	        	}
+	        	
+	        }
+	        
+	        //清空
+			function _clear()
+			{
+			  
+			    for (var i in app.arry[_index])
+			    {
+			    	if (i==0) continue;
+			    	app.arry[_index][i] = ' ';
+			    	
+			    }
+			    
+				app.$forceUpdate();
+			}
+			
+			//左移  1,2,3,4
+			function onLeft()
+			{
+				if (_index==-1) return false;
+				 var arry = ['模拟选号'];
+				 for (var i=2;i<=7;i++)
+			    {
+			    	if (app.arry[_index][i]!==' ')
+					{
+                        arry.push(String.fromCharCode( (app.arry[_index][i]).charCodeAt()-1));
 					}
-				}); */
-		});
+					else
+					{
+                        arry.push(' ');
+					}
+			    	
+			    	
+			    }
+			    if (app.arry[_index][1]!==' ')
+			    {
+					arry.push('g');
+			    }
+				else
+				{
+					arry.push(' ');
+				}
 
-	});
-	function vipchongzhi(title, url, w, h) {
-		layer_show(title, url, w, h);
-	}
+
+			    
+			    
+			    for (var i=0;i<4;i++)
+			    {
+			       arry.push(arry[i+1]);
+			    }
+			    
+			    app.arry[_index] = arry;
+				app.$forceUpdate();
+				
+			}
+			
+			//右移
+			function onRight()
+			{
+				if (_index==-1) return false;
+				 var arry =['模拟选号'];
+
+				 if (app.arry[_index][7]!==' ')
+				 {
+					 arry.push('a');
+				 }
+				 else
+				 {
+					 arry.push(' ');
+				 }
+				 
+				 for (var i=1;i<=6;i++)
+			    {
+			    	
+			    	if (app.arry[_index][i]!==' ')
+					{
+						if ((app.arry[_index][i]).charCodeAt()>='g')
+						{
+                           arry.push('a');
+                           
+						}
+						else
+						{					     
+						   arry.push(String.fromCharCode( (app.arry[_index][i]).charCodeAt()+1) );
+						}
+					}
+					else
+					{
+						arry.push(' ');
+					}
+			    	
+			    }
+			    
+			     for (var i=0;i<4;i++)
+			    {
+			       arry.push(arry[i+1]);
+			    }
+			    
+			   
+			    
+			   
+			    app.arry[_index] = arry;
+				app.$forceUpdate();
+			}
+			
+
 </script>
-
+<script type="text/javascript" src="qujianzoushi.js"></script>
 </html>

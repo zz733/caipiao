@@ -4,15 +4,36 @@
 <head>
 <meta charset="gbk">
 <title>综合尾数</title>
-</head>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"60502",secure:"60507"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
 <link rel="stylesheet" href="../css/lqzs.css" />
 <link rel="stylesheet" href="../css/bootstrap.min.css" />
 <script type="text/javascript" src="../js/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="../js/layer/layer.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-<body>
 
-	<div id="main"  style="width: 80%; margin:  0 auto;">
+<style type="text/css">
+  #lqzsTu {
+				margin: auto;
+				text-align: center;
+				font-size: 13px;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border: 0px solid #FFF;
+			}
+			
+			#lqzsTu>thead>tr>th {
+				border: 1px solid #FFF;
+			}
+			
+			#lqzsTu td {
+				border: 1px solid #FFF;
+				height: 28px;
+			}
+</style>
+
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1223" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/daletou/weishuzoushi.jsp">
+
+	<div id="main"  style="width: 80%; margin:  0 auto;" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1223" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/daletou/weishuzoushi.jsp">
 
 		<!-- 走势图  -->
 		<div id="top">
@@ -21,7 +42,7 @@
 				<span id="headt">标注形式选择：</span> <span><input id="zhexian"
 					type="checkbox" checked="checked"><label>带折线</label></span>
 			</div>
-			<table id="lqzsTu" class="table_lq" border="0" cellspacing="1px">
+			<table id="lqzsTu" class="table_lq" border="0" cellspacing="0px">
 				<thead>
 					<tr>
 						<td rowspan="2" width="65px" style="font-weight: 900;"
