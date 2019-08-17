@@ -847,7 +847,7 @@ function go3(m)
 					arry.push(arr2);
 			}
 		 }
-   return arry;  
+   return arry;
 }
 
 $(function(){
@@ -916,9 +916,6 @@ function showVIP(param,n)
 			}
 		}
 	}*/
-	
-	
-	
 	for (var i=0;i<param.length;i++)
 	{
 		$(".oneMoni .one").eq(param[i]).addClass("active");
@@ -1050,6 +1047,7 @@ $(function(){
 		   })(i);
 	}
 })
+
 $(".qingkong").click(function() {
 	$(".active").removeClass("active");
 	$(".active2").removeClass("active2");
@@ -1057,62 +1055,123 @@ $(".qingkong").click(function() {
 	$(".active3").removeClass("active3");
 });
 
-//$(".right").click(function(){
-//	var $tdindex2 = $(".active4");
-//	var tmp2 = [];
-//	for(var i=$tdindex2.length-1;i>=0;i--){
-//	    tmp2.push($tdindex2.eq(i).html());	
-//	}
-//	$(".bb").removeClass("active4");
-//	for(var i=0;i<tmp2.length;i++){
-//		var act3 = tmp2[i];
-//		if(act3==9){
-//			$(".bb").eq(0).addClass("active4");
-//		}else{
-//			$(".bb").eq(act3*1+1).addClass("active4");
-//		}
-//	}
-//	var $tdindex3 = $(".active3");
-//	var tmp3 = [];
-//	for(var i=$tdindex3.length-1;i>=0;i--){
-//	    tmp3.push($tdindex3.eq(i).html());	
-//	}
-//	$(".aa").removeClass("active3");
-//	for(var i=0;i<tmp3.length;i++){
-//		var act3 = tmp3[i];
-//		if(act3==9){
-//			$(".aa").eq(0).addClass("active3");
-//		}else{
-//			$(".aa").eq(act3*1+1).addClass("active3");
-//		}
-//	}
-//	if($(".active").text() != ""){
-//		var $tdindex4 = $(".active");
-//		var tmp = [];
-//		for(var i=$tdindex4.length-1;i>=0;i--){
-//		    tmp.push($tdindex4.eq(i).html());	
-//		}
-//		// 0,1
-//		$(".one").removeClass("active");
-//		$(".two").removeClass("active2");
-//		
-//		for(var i=0;i<tmp.length;i++){
-//			var act3 = tmp[i];
-//			
-//			if(act3==9){
-//				$(".one").eq(0).addClass("active");
-//				$(".two").eq(0).addClass("active2");
-//			}else{
-//				$(".one").eq(act3*1+1).addClass("active");
-//			}
-//			if (act3<4)
-//			{
-//				$(".oneMoni>td").eq(12+1*act3).addClass("active2");;
-//			}
-//			else if (act3==9)
-//			{
-//			}
-//		}
-//	}
-//})
+$(".right").click(function(){
+	var $tdindex2 = $(".active4");
+	var tmp2 = [];
+	for(var i=$tdindex2.length-1;i>=0;i--){
+	    tmp2.push($tdindex2.eq(i).html());	
+	}
+	$(".bb").removeClass("active4");
+	for(var i=0;i<tmp2.length;i++){
+		var act3 = tmp2[i];
+		console.log("act3前端"+ act3)
+		if(act3==9){
+			$(".bb").eq(0).addClass("active4");
+		}else{
+			$(".bb").eq(act3*1+1).addClass("active4");
+		}
+	}
+	var $tdindex4 = $(".active3");
+	var tmp4 = [];
+	for(var i=$tdindex4.length-1;i>=0;i--){
+	    tmp4.push($tdindex4.eq(i).html());	
+	}
+	$(".aa").removeClass("active3");
+	for(var i=0;i<tmp4.length;i++){
+		var act4 = tmp4[i];
+		if(act4==9){
+			$(".aa").eq(0).addClass("active3");
+		}else{
+			$(".aa").eq(act4*1+1).addClass("active3");
+			console.log("sdsds:"+act4*1-1)
+		}
+	}
+	if($(".active").text() != ""){
+		var $tdindex4 = $(".one.active");
+		$(".one").removeClass("active");
+		$(".two").removeClass("active2");
+		$(".two").removeClass("active");
+		for(var i=$tdindex4.length-1;i>=0;i--){
+			var o=$tdindex4.eq(i).html()*1;
+			var one=o<9?o+1:0;
+			var two=o<4?o+1:0;
+			if(o+1==10){
+				$(".two").eq(0).addClass("active2");
+			}
+			$(".one").eq(one).addClass("active");
+			if(o<4 && one==two){
+				$(".two").eq(two).addClass("active2");
+			}
+		}
+	}
+});
+$(".left").click(function() {
+	var $tdindex4 = $(".one.active");
+	$(".one").removeClass("active");
+	$(".two").removeClass("active2");
+	$(".two").removeClass("active");
+	for(var i=$tdindex4.length-1;i>=0;i--){
+		var o=$tdindex4.eq(i).html()*1;
+		var one=o>0?o-1:9;
+		$(".one").eq(one).addClass("active");
+		if(o<=5){
+			$(".two").eq(one).addClass("active");
+		}
+	}
+
+	var $tdindex2 = $(".active2");
+	var tmp2 = [];
+	for(var i=$tdindex2.length-1;i>=0;i--){
+	    tmp2.push($tdindex2.eq(i).html());	
+	}
+	$(".two").removeClass("active2");
+	for(var i=0;i<tmp2.length;i++){
+		var act2 = tmp2[i];
+		if(act2==0){
+			$(".two").eq(9).addClass("active2");
+		}else{
+			$(".two").eq(act2*1-1).addClass("active2");
+		}
+	}
+	var $tdindex2 = $(".active4");
+	var tmp2 = [];
+	for(var i=$tdindex2.length-1;i>=0;i--){
+	    tmp2.push($tdindex2.eq(i).html());	
+	}
+	$(".bb").removeClass("active4");
+	for(var i=0;i<tmp2.length;i++){
+		var act3 = tmp2[i];
+		if(act3==0){
+			$(".bb").eq(9).addClass("active4");
+		}else{
+			$(".bb").eq(act3*1-1).addClass("active4");
+		}
+	}
+	var $tdindex4 = $(".active3");
+	var tmp4 = [];
+	for(var i=$tdindex4.length-1;i>=0;i--){
+	    tmp4.push($tdindex4.eq(i).html());	
+	}
+	$(".aa").removeClass("active3");
+	for(var i=0;i<tmp4.length;i++){
+		var act4 = tmp4[i];
+		if(act4==0){
+			$(".aa").eq(9).addClass("active3");
+		}else{
+			$(".aa").eq(act4*1-1).addClass("active3");
+			console.log("sdsds:"+act4*1-1)
+		}
+	
+	}
+})
+
+
+
+
+
+
+
+
+
+
 
