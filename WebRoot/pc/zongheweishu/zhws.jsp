@@ -413,13 +413,27 @@ width:868px;
 						}
 					}
 					//2.处理数组0-9
+					var x = 0,
+						y = 0,
+						z = 0;
 					han_new2.push(han_new[0]); //期数
 					for(var k = 0; k < 10; k++) {
 						if(han_new.indexOf(k) > -1) {
 							han_new2.push(k);
+						
+							if(k % 3 == 0)
+								x++;
+							else if(k % 3 == 1)
+								y++;
+							else if(k % 3 == 2)
+								z++;
+						
+						
 						} else {
 							han_new2.push(" ");
 						}
+						
+					
 					}
 					//3.处理0-4
 					for(var m = 0; m < 5; m++) {
@@ -428,22 +442,14 @@ width:868px;
 					//4.跨度
 					var max = -1;
 					var min = 10;
-					var x = 0,
-						y = 0,
-						z = 0;
+					
 					for(var n = 1; n <= 10; n++) {
 						if(max < han_new[n])
 							max = han_new[n];
 						if(min > han_new[n])
 							min = han_new[n];
 
-						if(han_new[n] % 3 == 0)
-							x++;
-						else if(han_new[n] % 3 == 1)
-							y++;
-						else if(han_new[n] % 3 == 2)
-							z++;
-
+						
 					}
 					var kuadu = max - min;
 
@@ -452,6 +458,9 @@ width:868px;
 							han_new2.push(ii)
 						else
 							han_new2.push(' ');
+							
+						
+							
 					}
 
 					//0,1,2
