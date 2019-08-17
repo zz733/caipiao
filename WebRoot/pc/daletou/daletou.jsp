@@ -17,9 +17,29 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/pc/js/combineData.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/pc/js/accordion-single.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/pc/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+  #hqzsTu {
+				margin: auto;
+				text-align: center;
+				font-size: 13px;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border: 0px solid #FFF;
+			}
+			
+			#hqzsTu>thead>tr>th {
+				border: 1px solid #FFF;
+			}
+			
+			#hqzsTu td {
+				border: 1px solid #FFF;
+				height: 28px;
+			}
+</style>
 </head>
-<body>
-	<div id="main">
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1214" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/daletou/daletou.jsp">
+	<div id="main" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1214" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/daletou/daletou.jsp">
 		<table class="table_hq" cellspacing="1" id="hqzsTu" >
 			<thead>
 				<tr>
