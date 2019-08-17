@@ -17,8 +17,64 @@
 <script type="text/javascript" src="../js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="../js/layer/layer.js"></script>
 <script type="text/javascript" src="../js/accordion-single.js"></script>
-<script type="text/javascript" src="../js/qsws.js"></script>
+<script src="../js/vue.min.js"></script>
 
+					<!--自选框-->
+					<style>
+.vipxh_tx {
+	margin: 0px 0px 0px 50px;
+}
+
+.input_group .in {
+	width: 35px;
+}
+
+.input_group {
+	margin: -47px 0px 0px 280px;
+}
+
+.two_three {
+	margin: -33px 0px 0px 540px;	
+}
+
+.left_right {
+	margin: -46px 0px 0px 700px;
+}
+
+#qswsTu {
+				margin: auto;
+				text-align: center;
+				font-size: 13px;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border: 0px solid #FFF;
+			}
+			
+			#qswsTu>thead>tr>th {
+				border: 1px solid #FFF;
+			}
+			
+			#qswsTu td {
+				border: 1px solid #FFF;
+				height: 28px;
+			}
+			
+			.classGreen {
+				background-color: #EAEEEE;
+				color: #B6FBBB;
+			}
+			
+			.classRed {
+				background-color: #AE0000;
+				color: white;
+			}
+			
+			.classFenhong {
+				background-color: #EAC4CF;
+				color: #EAC4CF;
+			}
+			
+</style>
 <body>
 	<div style="width: 80%; margin: 0 auto;">
 		<!--
@@ -26,7 +82,7 @@
             	时间：2017-12-02
             	描述：走势图区
             -->
-		<div class="" style="padding: 5px; width: 100%;">
+		<div class="" style="padding: 5px; width: 100%;" id="app">
 
 			<table class="tabl" border="0" id="qswsTu">
 				<thead>
@@ -51,49 +107,31 @@
 						<th class="num">3</th>
 						<th class="num">4</th>
 					</tr>
-
 				</thead>
-			</table>
-
-			<!--
-                	作者：280191146@qq.com
-                	时间：2017-12-02
-                	描述：选号区
-                -->
-			<!--模拟选号-->
-			<div class="mn_xuanhou">
-				<div style="width: 100%;margin: 0 auto;">
-
-					<div class="wrap" style="padding-top: 10px;">
-
-						<div class="moni_xh">模拟选号</div>
-
-						<ul id="ul" style="height: 25px;">
-
-						</ul>
-					</div>
-
-					<!-- 模拟选号两行 -->
-					<div class="konghang" style="padding-top: 10px;margin-top: -20px;">
-
-						<div class="moni_xh" style="color:#EAEEEE"></div>
-
-						<ul class="ul1" style="height: 25px;">
-
-						</ul>
-					</div>
-					<div class="konghang" style="padding-top: 10px;margin-top: -21px;">
-
-						<div class="moni_xh" style="color:#EAEEEE"></div>
-
-						<ul class="ul1" style="height: 25px;">
-
-						</ul>
-					</div>
-
-				</div>
 				
-			</div>
+				<tr style="color: white;background-color: #EAEEEE;" align="center" v-for="(row,index) in arry">
+
+						<td style="background-color:#F3F3F3;color: gray;" v-if="index2==0" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+
+                        <!-- 0--9和0-4 -->
+					    <td    @click="switchCheck(index,index2)" :class="col!==' ' ? 'classRed':'classGreen'" v-if="index2>=1" v-for="(col,index2) in arry[index]">
+							{{col}}
+						</td>
+						
+				</tr>
+				
+				
+				
+			</table>
+			
+			 <div class="btn btn-group btn_qs" style="margin-top:-55px;margin-left:800px;">
+					<button onclick="onLeft()" type="button" class="left btn btn-success btn-sm">◀</button>
+					<button onclick="onRight()" type="button" class="right btn btn-success btn-sm">▶</button>
+					<button onclick="_clear()" type="button" class="qingkong btn btn-danger btn-sm">清</button>
+			  </div>
+
 			
 			<!--vip选号 -->
 			<!--<div style="background-color: #CFDFF3;height: 40px;" id="xh">
@@ -108,28 +146,7 @@
 					</div>
 					
 				
-					<!--自选框-->
-					<style>
-.vipxh_tx {
-	margin: 0px 0px 0px 50px;
-}
 
-.input_group .in {
-	width: 35px;
-}
-
-.input_group {
-	margin: -47px 0px 0px 280px;
-}
-
-.two_three {
-	margin: -33px 0px 0px 540px;	
-}
-
-.left_right {
-	margin: -46px 0px 0px 700px;
-}
-</style>
 					<div class="wrapper">
 						<div class="input-group input_group" onload="vip_zx()">
 					
@@ -154,11 +171,7 @@
 							style="margin-top: -12px;" ${sessionScope.userinfo.usersType==1?'':'disabled'}>▶</button>
 					</div>
                     
-                    <div class="btn btn-group btn_qs" style="margin-top:-55px;margin-left:900px;">
-					<button type="button" class="left btn btn-success btn-sm">◀</button>
-					<button type="button" class="right btn btn-success btn-sm">▶</button>
-					<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
-			        </div>
+                   
                     
                     
 				</div>
@@ -182,6 +195,259 @@
 	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>  
 	<script type="text/javascript" src="${pageContext.request.contextPath }/admin/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
+
+
+            var _index = -1;
+			var app = new Vue({
+				el: '#app',
+				data: {
+					arry: [],
+					moni: []
+				},
+				methods:
+				  {
+				  	switchCheck:function(index,index2)
+				  	{
+				  		 _switchCheck(index,index2);
+				  	}
+				  }
+
+			});
+
+			var url = "${pageContext.request.contextPath}/red.do?p=getRed";
+			var callback = function(result) {
+				//1.除了期数外，其他的取尾数 %10
+				var arry_old = eval(result); //原始数据
+				var arry_new = []; //新数组
+				for(var i in arry_old) {
+					var han_old = arry_old[i]; //旧的一行
+					var han_new = []; //新的一行
+					var han_new2 = [];
+					for(var j=0;j<4;j++) {
+						if(j == 0) {
+
+							han_new.push(han_old[0]);
+						} else {
+							han_new.push(han_old[j] % 10);
+						}
+					}
+					//2.处理数组0-9
+					han_new2.push(han_new[0]); //期数
+					for(var k = 0; k < 10; k++) {
+						if(han_new.indexOf(k) > -1) {
+							han_new2.push(k);
+						} else {
+							han_new2.push(" ");
+						}
+						
+					
+					}
+					//3.处理0-4
+					for(var m = 0; m < 5; m++) {
+						han_new2.push(han_new2[m + 1]);
+					}
+
+					arry_new.push(han_new2);
+
+				}
+				
+				//三行模拟选号
+				
+				for (var k=0;k<3;k++)
+				{
+					var moni = [];
+					for (var j=0;j<26;j++)
+					{
+						if (k==0 && j==0)
+						{
+							moni.push("模拟选号");
+						}
+						else
+						{
+							moni.push(" ");
+						}
+					}
+					arry_new.push(moni);
+				}
+
+				//输出 
+				//display(arry_new);
+				app.arry = arry_new;
+				
+				_index = arry_old.length;
+                
+			}
+			$.get(url,callback);
+			
+			
+			 /* ----------------------点击选中---------------------------*/
+	        function _switchCheck(index,index2)
+	        {
+	        	if ( app.arry[index][0]!="模拟选号")
+	        	{
+	        		return false;
+	        	}
+	        	
+	        	_index = index;
+	        	if (index2>0)
+	        	{
+	        		
+	        		
+	        		
+	        		//$(td).toggleClass("classRed"); 
+				  		
+	        	    var value = app.arry[index][index2];
+	        	    var index3 = -1;
+	        	    if (index2>=1 && index2<=5)   //选 了前面0-4
+	        	    {
+	        	       index3 = index2 + 10;		
+	        	    }
+	        	    else if (1*index2>10) //选了后面0-4
+	        	    {
+	        	    	index3 = index2-10;
+	        	    	
+	        	    }
+	        	     
+	        	    if (value==' ')
+	        	    {
+	        	    	
+	        	    	//td.innerHTML = index2-1;
+	        	    	if (index2<=10)
+	        	    	{
+	        	    		
+		        	    	app.arry[index][index2] =index2-1+"";
+		        	    	if (index3!=-1)
+		        	    	{
+		        	    		app.arry[index][index3] =index2-1+"";
+		        	    		
+	        	    	    }
+	        	    	}
+	        	    	else
+	        	    	{
+	        	    		app.arry[index][index2] =index2%10-1+"";
+		        	    	if (index3!=-1)
+		        	    	{
+		        	    		app.arry[index][index3] =index2%10-1+"";
+		        	    		
+	        	    	    }
+	        	    	}
+	        	    	
+	        	    }
+	        	    else
+	        	    {
+	        	    	//td.innerHTML = ' ';
+	        	    	app.arry[index][index2] = ' ';
+	        	        if (index3!=-1)
+		        	    	    {
+		        	    		   app.arry[index][index3] =' ';
+		        	    		
+		        	    	    }
+	        	    	
+	        	    }
+	        	   
+	        	    app.$forceUpdate(); //强制更新
+	        	   
+	        	    
+	        	}
+	        	
+	        }
+	        
+	        //清空
+			function _clear()
+			{
+			  
+			    for (var i in app.arry[_index])
+			    {
+			    	if (i==0) continue;
+			    	app.arry[_index][i] = ' ';
+			    	
+			    }
+			    
+				app.$forceUpdate();
+			}
+			
+			//左移  1,2,3,4
+			function onLeft()
+			{
+				if (_index==-1) return false;
+				 var arry = ['模拟选号'];
+				 for (var i=2;i<=10;i++)
+			    {
+			    	if (app.arry[_index][i]!==' ')
+					{
+                        arry.push(app.arry[_index][i]-1);
+					}
+					else
+					{
+                        arry.push(' ');
+					}
+			    	
+			    	
+			    }
+			    if (app.arry[_index][1]!==' ')
+			    {
+					arry.push(9);
+			    }
+				else
+				{
+					arry.push(' ');
+				}
+
+				for (i=1;i<=5 ;i++ )
+				{
+					arry.push(arry[i]);
+				}
+
+			    
+			    
+			    app.arry[_index] = arry;
+				app.$forceUpdate();
+				
+			}
+			
+			//右移
+			function onRight()
+			{
+				if (_index==-1) return false;
+				 var arry =['模拟选号'];
+
+				 if (app.arry[_index][15]!==' ')
+				 {
+					 arry.push(0);
+				 }
+				 else
+				 {
+					 arry.push(' ');
+				 }
+				 
+				 for (var i=1;i<15;i++)
+			    {
+			    	
+			    	if (app.arry[_index][i]!==' ')
+					{
+						if (1*app.arry[_index][i]+1>=10)
+						{
+                           arry.push(0);
+						}
+						else
+						{					     
+						   arry.push(1*app.arry[_index][i]+1);
+						}
+					}
+					else
+					{
+						arry.push(' ');
+					}
+			    	
+			    }
+			    
+			   
+			    
+			    app.arry[_index] = arry;
+				app.$forceUpdate();
+			}
+			
+			
 
 $(function(){
 	 //  vip_mokuai = $("#vipxh").addClass("jinyong");
@@ -228,5 +494,10 @@ function vipchongzhi(title,url,w,h){
 	layer_show(title,url,w,h);
 }
 </script>
+
+
+
+
+<script type="text/javascript" src="../js/qsws.js"></script>
 
 </html>

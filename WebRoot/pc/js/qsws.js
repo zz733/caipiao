@@ -1,6 +1,6 @@
 /************前三走势图**********/
 //初始化数据
-getTableData();
+//getTableData();
 var size = 0;
 //得到工程路径
 function getRootPath() {
@@ -207,8 +207,8 @@ $(document)
 							var active = chooseIndexs.indexOf(i) > -1;
 							str = str + "<li class='" + idValue + " "+(active ? "active" : "")+"'" +">" + mnxh2[i] + "</li>";
 						}
-
-						$(".wrap #ul").html(str);
+                       
+						//$(".wrap #ul").html(str);
 					}
 					function move(direction) {
 						var isLeft = direction < 0; // 向左移动
@@ -232,7 +232,7 @@ $(document)
 									}
 								}
 							}
-							console.log(mnxh)
+							//console.log(mnxh)
 							render();
 						}
 					}
@@ -321,6 +321,7 @@ function xuanN(num) {
     
 	//将num的值变为全局变量
 	xuanNum = num;
+	
 
 	if (qhArr_temp.length < 4) {
 		layer.msg('尾数不能小于4个');
@@ -346,15 +347,41 @@ function xuanN(num) {
 	//生成li组合并设置样式
 	var $ul = $(".ul_xh"); //得到ul
 	$ul.empty();
-	for (var j = 0; j < dataArr.length; j++) {
-		var $li = $("<li>" + dataArr[j] + "</li>").toggleClass("li_lf");
-		var idName = id + dataArr[j]; 
-		for (var i = 0; i < $(idName).length; i++) {
-			var mnStyle_qh1 = $($(idName)[i]).toggleClass("active");
-		}
-		$ul.append($li);
-		chooseIndexs.push(mnxh.indexOf(dataArr[j]));
-		//console.info(chooseIndexs);
+	var arry = ['模拟选 号'];
+	if (dataArr)
+	{
+		for (var ii=0;ii<10;ii++)
+	    {
+			if (dataArr.indexOf(ii)>-1)
+				{
+				  arry.push(ii);
+				}
+			else
+				{
+				  arry.push(' ');
+				}
+	    }	
+		
+		for (var k=1;k<=5;k++)
+			{
+			  arry.push(arry[k]);
+			}
+		
+			for (var j = 0; j < dataArr.length; j++) {
+				
+				var $li = $("<li>" + dataArr[j] + "</li>").toggleClass("li_lf");
+				var idName = id + dataArr[j]; 
+				for (var i = 0; i < $(idName).length; i++) {
+					var mnStyle_qh1 = $($(idName)[i]).toggleClass("active");
+				}
+				$ul.append($li);
+				
+				chooseIndexs.push(mnxh.indexOf(dataArr[j]));
+				//console.info(chooseIndexs);
+			}
+	   
+		app.arry[_index] = arry;
+		app.$forceUpdate();
 	}
 
 	var $left_index = $(".left_index");
