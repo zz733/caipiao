@@ -24,6 +24,27 @@
 }
 </style>
 
+
+<style type="text/css">
+  #lqzsTu {
+				margin: auto;
+				text-align: center;
+				font-size: 13px;
+				border-collapse: collapse;
+				border-spacing: 0px;
+				border: 0px solid #FFF;
+			}
+			
+			#lqzsTu>thead>tr>th {
+				border: 1px solid #FFF;
+			}
+			
+			#lqzsTu td {
+				border: 1px solid #FFF;
+				height: 28px;
+			}
+</style>
+
 	<div id="main"  style="width: 80%; margin:  0 auto;">
 		<!-- 走势图  -->
 		<div id="top">
