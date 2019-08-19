@@ -20,15 +20,15 @@
     src="${pageContext.request.contextPath}/pc/js/layer/layer.js"></script>
 			<script type="text/javascript"
 	src="${pageContext.request.contextPath}/pc/js/accordion-single.js"></script>
-	</head>
-	<body>
+	<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"60502",secure:"60507"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+	<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1144" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/3d/3d.jsp">
 			<!--
             	作者：280191146@qq.com
             	时间：2017-12-02
             	描述：走势图区
             -->
 			<div class=""
-				style="width: 100%;">
+				style="width: 100%;" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1144" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/3d/3d.jsp">
 
 				<table class="tabl" border="1"
 					id="hswsTu">
@@ -158,7 +158,7 @@
 					</thead>
 		</table>
 		<div class="nextbig">
-		<div class="btn btn-group btn_hs" style="float:right;">
+		<div class="btn btn-group btn_hs" style="float:right;margin-right: -50px">
 						<button type="button" class="left btn btn-success btn-sm">◀</button>
 						<button type="button" class="right btn btn-success btn-sm">▶</button>
 						<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
@@ -169,7 +169,7 @@
 		    </div>
 		</div>
 						<th class="num">
-							4
+							
 						</th>
 	</body>
 	

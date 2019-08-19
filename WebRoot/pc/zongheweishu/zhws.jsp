@@ -225,7 +225,43 @@ width:868px;
 				</table>
 		</div>
 		
-		
+		<!--模拟选号-->
+		<div class="mn_xuanhou" style="display: none;">
+	
+			<div class="wrap" style="padding-top: 10px;">
+
+				<div class="moni_xh">模拟选号</div>
+
+				<ul id="ul" style="height: 25px;">
+
+				</ul>
+		   </div>
+			
+			<!-- 模拟选号两行 -->
+			<div class="konghang" style="padding-top: 10px;margin-top: -21px;">
+
+				<div class="moni_xh" style="color:#EAEEEE">空行</div>
+
+				<ul class="ul1" style="height: 25px;">
+
+				</ul>
+			</div>
+			<div class="konghang" style="padding-top: 10px;margin-top: -21px;">
+
+				<div class="moni_xh" style="color:#EAEEEE">空行</div>
+
+				<ul class="ul1" style="height: 25px;">
+
+				</ul>
+			</div>
+
+		<div class="btn btn-group btn_zh" style="margin-top: -50px;">
+			        <button type="button" class="left btn btn-success btn-sm">◀</button>
+					<button type="button" class="right btn btn-success btn-sm">▶</button>
+					<button type="button" class="qingkong btn btn-danger btn-sm">清</button>
+	                      
+        </div>
+	</div>
 		
 		<!--vip选号-->
 		<div class="container-fluid">
@@ -627,7 +663,7 @@ width:868px;
 				if (_index==-1) return false;
 				 var arry =['模拟选号'];
 
-				 if (app.arry[_index][15]!==' ')
+				 if (app.arry[_index][10]!==' ')
 				 {
 					 arry.push(0);
 				 }

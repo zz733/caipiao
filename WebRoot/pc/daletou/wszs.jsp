@@ -663,7 +663,7 @@ width:868px;
 				if (_index==-1) return false;
 				 var arry =['模拟选号'];
 
-				 if (app.arry[_index][15]!==' ')
+				 if (app.arry[_index][10]!==' ')
 				 {
 					 arry.push(0);
 				 }

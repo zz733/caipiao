@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-	</head>
+	<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"60502",secure:"60507"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
 	<script src="../js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" type="text/css" href="../css/zhws.css" />
@@ -18,9 +18,9 @@
     <script type="text/javascript" src="../js/jquery.easydropdown.js" ></script>
 	<script type="text/javascript" src="../js/combineData.js" ></script>
 	<script type="text/javascript" src="../js/accordion-single.js" ></script>
-	<body>
+	<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1308" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/pailiewu/zhws.jsp">
 		
-		<div style="width: 80%; margin:  0 auto;">
+		<div style="width: 80%; margin:  0 auto;" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1308" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/pailiewu/zhws.jsp">
 		<!--走势图-->
 		<div class="" style="padding: 5px; ">
 		<table class="table_zh" border="0" id="zhwsTu" cellspacing="1px">

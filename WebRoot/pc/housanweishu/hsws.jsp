@@ -126,7 +126,7 @@
 				
 			</table>
 			
-			 <div class="btn btn-group btn_qs" style="margin-top:-55px;margin-left:800px;">
+			 <div class="btn btn-group btn_qs" style="margin-top:-55px;margin-left:1000px;">
 					<button onclick="onLeft()" type="button" class="left btn btn-success btn-sm">◀</button>
 					<button onclick="onRight()" type="button" class="right btn btn-success btn-sm">▶</button>
 					<button onclick="_clear()" type="button" class="qingkong btn btn-danger btn-sm">清</button>
@@ -255,7 +255,7 @@
 				for (var k=0;k<3;k++)
 				{
 					var moni = [];
-					for (var j=0;j<26;j++)
+					for (var j=0;j<16;j++)
 					{
 						if (k==0 && j==0)
 						{
@@ -410,7 +410,7 @@
 				if (_index==-1) return false;
 				 var arry =['模拟选号'];
 
-				 if (app.arry[_index][15]!==' ')
+				 if (app.arry[_index][10]!==' ')
 				 {
 					 arry.push(0);
 				 }

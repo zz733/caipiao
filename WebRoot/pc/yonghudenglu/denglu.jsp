@@ -17,12 +17,12 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/pc/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
 <script type="text/javascript" src="${pageContext.request.contextPath}/pc/lib/jquery.validation/1.14.0/messages_zh.js"></script> 
 <script type="text/javascript" src="${pageContext.request.contextPath}/pc/js/H-ui.min.js"></script> 
-	</head>
+	<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"60502",secure:"60507"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
 	<!--登录和注册-->
-	<body>
+	<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1310" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/yonghudenglu/denglu.jsp">
 	
 		
-			<div class="head" style="text-align: center; padding-top:50px;  margin:auto; width: 60%;" >
+			<div class="head" style="text-align: center; padding-top:50px;  margin:auto; width: 60%;"  data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-1310" data-genuitec-path="/ShuangSeQiu/WebRoot/pc/yonghudenglu/denglu.jsp">
 				<img src="${pageContext.request.contextPath}/pc/img/logo_sm.jpg"  style="width:60px;height:60px;margin-top:-10px;"/>
 				<span style="font-size:30px ;font-family:'微软雅黑';">易乐彩票智能选号系统</span>
 			
