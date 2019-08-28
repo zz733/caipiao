@@ -331,6 +331,7 @@ width:868px;
 
 			var url = "${pageContext.request.contextPath}/daletou.do?p=get3d3";
 			var callback = function(result) {
+			    //alert(result)
 				//1.除了期数外，其他的取尾数 %10
 				var arry_old = eval(result); //原始数据
 				var arry_new = []; //新数组
@@ -338,7 +339,7 @@ width:868px;
 					var han_old = arry_old[i]; //旧的一行
 					var han_new = []; //新的一行
 					var han_new2 = [];
-					for(var j in han_old) {
+					for(var j=0;j<6;j++) {
 						if(j == 0) {
 
 							han_new.push(han_old[0]);
