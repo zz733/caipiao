@@ -24,16 +24,22 @@ function paddingData(data) {
 	  {
 		 var value = data[i][j]; //1,8
 		 var index = value%7;	//1
+		 
 		 if (index>0)
 		   tmp.push(index);    
 		 else
-		   tmp.push("7")
+		   tmp.push(7)
 	  }
+	  
+	  
+	  //7,6,7,1,1
 	   
 	  for (var k=1;k<=7;k++)
 	  {
+		  
 		  if (tmp.indexOf(k)>-1)
 		  {
+			  
 			  rowarry.push(arry[k]);
 			  
 		  }	
@@ -42,7 +48,7 @@ function paddingData(data) {
 			  rowarry.push(' ');   
 		 }
 	  }
-	  
+	 
 	  for (var k=1;k<=4;k++)
 	  {
 		  if (tmp.indexOf(k)>-1)
