@@ -109,6 +109,7 @@ public class WeixinPayVIPAction {
 		request.setAttribute("weixinpay", id + ".png");
 		request.setAttribute("orderId", id);
 		request.setAttribute("money", money);
+		request.setAttribute("url", code_url);
 
 		return "/pay/weixinpay/vippay.jsp";
 

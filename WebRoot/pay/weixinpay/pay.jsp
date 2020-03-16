@@ -9,8 +9,10 @@
 <!-- 导入外部JQuery -->
 <%-- <script src="${pageContext.request.contextPath}/newpc/js/jquery-1.2.6.pack.js" type="text/javascript" language="javascript"></script>
 	 --%>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+<script
+			src="${pageContext.request.contextPath}/weixin/js/jquery-2.1.3.min.js"></script>
+		<script 
+			src="${pageContext.request.contextPath}/weixin/js/jquery.qrcode.min.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/admin/lib/layer/2.1/layer.js"></script>
 <script type="text/javascript"
@@ -109,8 +111,8 @@ body {
 			style="background-image: ../ images/ wxbg_mail_box.png; bottom: -10px; overflow: hidden; position: relative;">
 			<div class="wx_box_area">
 				<div class="wx_img_wrapper">
-					<img id="payQRImg" class="code" style="border: 1px solid blue;" 
-					src="${pageContext.request.contextPath }/tempImages/${weixinpay}" />
+				
+					<div id="code" class="code" style="border: 1px solid blue;width: 150px;height: 150px;" />
 				</div>
 				<div class="msg_default">
 					<i class="icon60" style="visibility: hidden"> 支付成功 </i>
@@ -148,3 +150,14 @@ body {
 	
 	</script> -->
 </html>
+
+
+<script>
+   $(function(){
+         $('#code').qrcode({
+		                  width: 150,
+                          height: 150,
+                          text:'${url}'
+		              }); //二维码链接
+   });
+</script>

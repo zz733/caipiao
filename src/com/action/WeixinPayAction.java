@@ -44,10 +44,11 @@ public class WeixinPayAction {
 	 * @param response
 	 * @return
 	 * @throws IOException
+	 * @throws InterruptedException 
 	 */
 	@RequestMapping(params = "p=toPay")
 	public String toPay(HttpServletRequest request, HttpServletResponse response)
-			throws IOException {
+			throws IOException, InterruptedException {
 		response.setContentType("text/html;charset=utf-8");
 		String id = request.getParameter("payId"); // 订单ID
 		float money = Float.parseFloat(request.getParameter("money"));// 支付金额
@@ -107,6 +108,7 @@ public class WeixinPayAction {
 		request.setAttribute("weixinpay", id+".png");
 		request.setAttribute("orderId", id);
 		request.setAttribute("money", money);
+		request.setAttribute("url", code_url);
 
 		return "/pay/weixinpay/pay.jsp";
 
@@ -119,10 +121,11 @@ public class WeixinPayAction {
 	 * @param response
 	 * @return
 	 * @throws IOException
+	 * @throws InterruptedException 
 	 */
 	@RequestMapping(params = "p=toPay2")
 	public String toPay2(HttpServletRequest request, HttpServletResponse response)
-			throws IOException {
+			throws IOException, InterruptedException {
 		response.setContentType("text/html;charset=utf-8");
 		String id = request.getParameter("payId"); // 订单ID
 		float money = Float.parseFloat(request.getParameter("money"));// 支付金额
@@ -170,8 +173,6 @@ public class WeixinPayAction {
 			return null;
 		}
 		String imgPath = request.getSession().getServletContext().getRealPath("/tempImages/" + id + ".png"); // 二维码存放的图片路径，请修改成实际图片
-		System.out.println("----------------------imgPath----------------------");
-		System.out.println(imgPath);
 		
 		String encoderContent = code_url;
 		T2DMa ma = new T2DMa();
@@ -179,6 +180,7 @@ public class WeixinPayAction {
 		request.setAttribute("weixinpay", id+".png");
 		request.setAttribute("orderId", id);
 		request.setAttribute("money", money);
+		request.setAttribute("url", code_url);
 
 		return "/pc/mingshijiangyan/pay/weixinpay/pay.jsp";
 
