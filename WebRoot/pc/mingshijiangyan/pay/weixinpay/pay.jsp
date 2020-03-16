@@ -6,22 +6,6 @@
 			+ path + "/";
 %>
 
-<!-- 导入外部JQuery -->
-<%-- <script src="${pageContext.request.contextPath}/newpc/js/jquery-1.2.6.pack.js" type="text/javascript" language="javascript"></script>
-	 --%>
-
-
-<%--
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/admin/lib/layer/2.4/layer.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/admin/lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/admin/lib/static/h-ui/js/H-ui.js"></script>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/admin/lib/static/h-ui.admin/js/H-ui.admin.js"></script>
- --%>
- 
  <script
 			src="${pageContext.request.contextPath}/weixin/js/jquery-2.1.3.min.js"></script>
 		<script 
@@ -112,6 +96,7 @@ body {
 
 <script>
    $(function(){
+         alert('${url}');
          $('#code').qrcode({
 		                  width: 150,
                           height: 150,

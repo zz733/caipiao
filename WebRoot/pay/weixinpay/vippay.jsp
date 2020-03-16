@@ -10,7 +10,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/pc/css/zhuce.css"  type="text/css">
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/pc/css/bootstrap.min.css" />
- <script type="text/javascript" src="${pageContext.request.contextPath}/pc/lib/jquery/1.9.1/jquery.min.js"></script> 
 	 
 	 <script src="${pageContext.request.contextPath}/weixin/js/jquery-2.1.3.min.js"></script>
 		<script 
@@ -107,7 +106,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<body>
 		<link rel="stylesheet" href="../css/bootstrap.min.css" />
- <script type="text/javascript" src="${pageContext.request.contextPath}/pc/lib/jquery/1.9.1/jquery.min.js"></script> 
          
          <section class="w12 login">
           </section>
@@ -127,9 +125,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 								<div class="wx_img_wrapper">
 
-									<div id="code" class="code"  style="border: 1px solid blue; "
-										
-										src="${pageContext.request.contextPath }/tempImages/${weixinpay }"/>
+									<div id="code" class="code"  style="border: 1px solid blue; width:150px;height:150px"/>
 								</div>
 								<div class="msg_default">
 									<i class="icon60" style="visibility: hidden">
@@ -163,29 +159,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 		
 	</body>
-<!-- 	<script type="text/javascript">
-	window.onload = function(){
-			$.ajax({
-			type: "post",
-			url: "${pageContext.request.contextPath}/weixinPay.do?p=toPay&money=0.01",
-			success:function(data){
-			alert("assdsdsas333"+Math.random(4).toString());
-			}
-		});
-	}
-	setInterval(function(){
-		alert("asas"+Math.random(4).toString());
-		/* 	$.ajax({
-			type: "post",
-			url: "${pageContext.request.contextPath}/weixinPay.do?p=toPay",
-			success: function(data){
-			alert("assdsdsas"+Math.random(4).toString());
-			}
-		}); */
-		alert("sdsdsdsdsaaaaaaaaaaaaa");
-	}, 5000);
-	
-	</script> -->
 </html>
 
 
