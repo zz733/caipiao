@@ -12,8 +12,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 <link rel="stylesheet" href="${pageContext.request.contextPath}/pc/css/bootstrap.min.css" />
  <script type="text/javascript" src="${pageContext.request.contextPath}/pc/lib/jquery/1.9.1/jquery.min.js"></script> 
 	 
-	 	<script type="text/javascript"
-			src="${pageContext.request.contextPath}/admin/lib/jquery/1.9.1/jquery.min.js"></script>
+	 	<script
+			src="${pageContext.request.contextPath}/weixin/js/jquery-2.1.3.min.js"></script>
+		<script 
+			src="${pageContext.request.contextPath}/weixin/js/jquery.qrcode.min.js"></script>
 		<script type="text/javascript"
 		<script type="text/javascript"
 			src="${pageContext.request.contextPath}/admin/lib/My97DatePicker/WdatePicker.js"></script>
@@ -163,7 +165,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 								<div class="wx_img_wrapper">
 
-									<img id="payQRImg" class="code"  style="border: 0px solid blue; text-align: center;width: 200px;height: 200px;"
+									<div id="code" class="code" style="border: 1px solid blue;width:200px;height: 200px;" />
 										
 										src="${pageContext.request.contextPath }/tempImages/${weixinpay }"/>
 								</div>
@@ -223,3 +225,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	</script> -->
 </html>
+
+<script>
+   $(function(){
+         $('#code').qrcode({
+		                  width: 200,
+                          height: 200,
+                          text:'${url}'
+		              }); //二维码链接
+   });
+</script>
+

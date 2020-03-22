@@ -49,7 +49,6 @@ public class WeixinGetAccessTokenListen implements ServletContextListener{
 				String secret = WeixinConfig.APPSECRET;
 				Token token = new TokenAPI().token(appid, secret);
 				access_token = token.getAccess_token();
-		        //System.out.println("监听器中定时取access_token --------------"+access_token);
 				Ticket ticket = new TicketAPI().getTicket(access_token);
 				
 				jsTicket = ticket.getTicket(); //jssdk中要用到

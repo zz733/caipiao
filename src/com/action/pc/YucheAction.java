@@ -285,13 +285,12 @@ public class YucheAction {
 		String imgPath = request.getSession().getServletContext().getRealPath(
 				"/tempImages/" + id + ".png"); // 二维码存放的图片路径，请修改成实际图片
 		String encoderContent = code_url;
-		System.out.println(encoderContent);
 		T2DMa ma = new T2DMa();
 		ma.encoderQRCode(encoderContent, imgPath, "png");
-		System.out.println(ma.toString());
 		request.setAttribute("weixinpay", id + ".png");
 		request.setAttribute("orderId", id);
 		request.setAttribute("money", money);
+		request.setAttribute("url", code_url);
 
 		return "/pc/yuche/wxpay/vippay.jsp";
 
